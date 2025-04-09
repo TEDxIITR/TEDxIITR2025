@@ -408,8 +408,8 @@ const Speakers = () => {
           SPEAKER
         </h1>
       </div>
-      <div className="flex justify-center md:gap-20 items-center">
-        <div className="flex flex-col gap-2">
+      <div className="flex justify-center  gap-10 md:gap-20 items-center">
+        <div className="flex flex-col mt-20 md:mt-0 gap-2">
           {sections.map((section, index) => (
             <button
               key={index}
@@ -425,19 +425,19 @@ const Speakers = () => {
           ))}
         </div>
         <div>
-          <div className="flex flex-col items-center sm:flex-row md:gap-10 md:justify-center md:h-[25rem] ">
+          <div className="flex flex-col items-center sm:flex-row gap-10 md:gap-10 md:justify-center w-full md:h-[25rem] ">
             <div
-              className="flex flex-col justify-center items-end md:pl-12"
+              className="flex flex-col justify-center w-full items-end md:pl-12"
               ref={speakerNameRef}
             >
-              <div className="text-white text-6xl md:text-7xl font-extrabold tracking-[0.5rem]">
+              <div className="text-white text-5xl md:text-7xl font-extrabold tracking-[0.5rem]">
                 {
                   sections[activeSection].speakers[activeSpeaker].name.split(
                     " "
                   )[0]
                 }
               </div>
-              <div className="text-white text-4xl md:text-5xl font-bold tracking-[0.5rem]">
+              <div className="text-white text-3xl md:text-5xl font-bold tracking-[0.5rem]">
                 {sections[activeSection].speakers[activeSpeaker].name.split(
                   " "
                 )[1] || ""}
@@ -451,12 +451,12 @@ const Speakers = () => {
                     "/placeholder.svg"
                   }
                   alt={sections[activeSection].speakers[activeSpeaker].name}
-                  className="z-10 w-100px md:w-[400px]"
+                  className="z-10 w-[240px] md:w-[600px]"
                 />
               </div>
             </div>
           </div>
-          <div className="relative z-10  flex justify-center items-end w-[80] md:w-full">
+          <div className="relative z-10  flex justify-center items-end w-[100%] md:w-full">
             <div
               ref={carouselRef}
               className="flex gap-4 px-4 overflow-x-auto pb-8 pt-3 carousel carousel-center  max-w-md md:max-w-2xl mx-auto"
