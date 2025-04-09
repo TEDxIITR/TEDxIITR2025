@@ -408,7 +408,7 @@ const Speakers = () => {
           SPEAKER
         </h1>
       </div>
-      <div className="flex justify-center  gap-10 md:gap-20 items-center">
+      <div className="flex justify-center  gap-10 md:gap-10 items-center">
         <div className="flex flex-col mt-20 md:mt-0 gap-2">
           {sections.map((section, index) => (
             <button
@@ -427,7 +427,7 @@ const Speakers = () => {
         <div>
           <div className="flex flex-col items-center sm:flex-row gap-10 md:gap-10 md:justify-center w-full md:h-[25rem] ">
             <div
-              className="flex flex-col justify-center w-full items-end md:pl-12"
+              className="flex flex-col justify-center w-full items-center md:items-end md:pl-12"
               ref={speakerNameRef}
             >
               <div className="text-white text-5xl md:text-7xl font-extrabold tracking-[0.5rem]">
@@ -467,7 +467,7 @@ const Speakers = () => {
                   ref={(el) => (carouselItemsRef.current[index] = el)}
                   className={`carousel-item rounded-2xl overflow-hidden border-3 mr-2 transition-all duration-300 cursor-pointer ${
                     index === activeSpeaker
-                      ? "scale-125 z-20 active bg-gradient-to-t from-black to-red-500 "
+                      ? "scale-125 z-20 active border-white bg-gradient-to-t from-black to-red-500 "
                       : "border-white bg-gradient-to-t from-black to-transparent "
                   }`}
                   onClick={() => handleSpeakerClick(index)}
