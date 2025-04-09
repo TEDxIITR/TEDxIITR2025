@@ -381,7 +381,7 @@ const Speakers = () => {
   ];
 
   const sections = [
-    { year: "2025", speakers: speakers2025 },
+    // { year: "2025", speakers: speakers2025 },
     { year: "2024", speakers: speakers2024 },
     { year: "2019", speakers: speakers2019 },
     { year: "2017", speakers: speakers2017 },
