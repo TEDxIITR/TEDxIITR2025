@@ -1,13 +1,13 @@
 import React from "react";
-import AWS from "../../../public/Sponsers/AWS.png";
-import Cashify from "../../../public/Sponsers/Cashify.png";
-import CashKaro from "../../../public/Sponsers/CashKaro.png";
-import Infosys from "../../../public/Sponsers/Infosys.png";
-import NPCI from "../../../public/Sponsers/NPCI.png";
-import OYO from "../../../public/Sponsers/OYO.png";
-import Samsung from "../../../public/Sponsers/Samsung.png";
-import Tides from "../../../public/Sponsers/Tides.png";
-import TOI from "../../../public/Sponsers/TOI.png";
+import AWS from "/Sponsers/AWS.webp";
+import Cashify from "/Sponsers/CASHIFY.webp";
+import CashKaro from "/Sponsers/CASHKARO.webp";
+import Infosys from "/Sponsers/INFOSYS.webp";
+import NPCI from "/Sponsers/NCPI.webp";
+import OYO from "/Sponsers/OYO.webp";
+import Samsung from "/Sponsers/SAMSUNG.webp";
+import Tides from "/Sponsers/TIDES.webp";
+import TOI from "/Sponsers/TOI.webp";
 
 const Sponsers = () => {
   return (
@@ -24,7 +24,7 @@ const Sponsers = () => {
             fontWeight: "10rem",
           }}
         >
-          Sponsers
+          Sponsors
         </h1>
         <div className="flex w-[100%] md:w-full gap-2.5 flex-col md:gap-10 justify-self-center">
           <div className="flex gap-4 justify-center md:gap-15">

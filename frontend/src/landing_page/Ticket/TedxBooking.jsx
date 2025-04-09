@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import Tshirt from "../../../public/t-shirt.svg";
-import tickets from "../../../public/tickets.svg";
-import tickets2 from "../../../public/tickets2.png";
-import Frame from "../../../public/Speakers2024/Frame.png";
+import Tshirt from "../../../public/t-shirt.webp";
+import tickets from "../../../public/tickets.webp";
+import tickets2 from "../../../public/tickets2.webp";
+import Frame from "../../../public/Speakers2024/Frame.webp";
 
 export default function TedxBooking() {
   const [isMobile, setIsMobile] = useState(false);

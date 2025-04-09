@@ -127,7 +127,7 @@ const events = [
 
 const EventsLine = () => {
   return (
-    <div className="w-full lg:w-[65%] flex justify-center align-middle my-auto">
+    <div className="w-full lg:w-[65%] flex justify-center align-middle my-auto px-10 md:px-0">
       <VerticalTimeline>
         {events.map((event) => (
           <VerticalTimelineElement

@@ -3,6 +3,7 @@ import Hero from "./Hero";
 import SpearkersPage from "./SpearkersPage";
 import TapestryPage from "./TapestryPage";
 import SponsersPage from "./SponsersPage";
+import PastEventsPage from "./PastEventsPage";
 import { useState, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
@@ -45,7 +46,9 @@ const HomePage = () => {
       <section id="speakers-section">
         <SpearkersPage />
       </section>
-
+      {/* <section id="pastEvents-section">
+        <PastEventsPage />
+      </section> */}
       <section id="sponsers-section">
         <SponsersPage />
       </section>

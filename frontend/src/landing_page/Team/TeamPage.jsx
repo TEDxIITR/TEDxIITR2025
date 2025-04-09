@@ -1,18 +1,18 @@
 import TeamMemberCard from "./TeamMemberCard";
-import Aman from "/MemberImages/Aman.png";
-import Anuj from "/MemberImages/Anuj.png";
-import Anukriti from "/MemberImages/Anukriti.png";
-import Anushka from "/MemberImages/Anushka.png";
-import Karan from "/MemberImages/Karan.png";
-import Ram from "/MemberImages/Ram.png";
-import Saksham from "/MemberImages/Saksham.png";
-import Sameer from "/MemberImages/Sameer.png";
-import Shaurya from "/MemberImages/Shaurya.png";
-import Saumya from "/MemberImages/Saumya.png";
-import V_Anuj from "/MemberImages/V_Anuj.png";
-import Vidish from "/MemberImages/Vidish.png";
-import Yashasvi from "/MemberImages/Yashasvi.png";
-import sahil from "/MemberImages/sahil.svg";
+import Aman from "/MemberImages/Aman.webp";
+import Anuj from "/MemberImages/Anuj.webp";
+import Anukriti from "/MemberImages/Anukriti.webp";
+import Anushka from "/MemberImages/Anushka.webp";
+import Karan from "/MemberImages/Karan.webp";
+import Ram from "/MemberImages/Ram.webp";
+// import Saksham from "/MemberImages/Saksham.webp";
+import Sameer from "/MemberImages/Sameer.webp";
+import Shaurya from "/MemberImages/Shaurya.webp";
+import Saumya from "/MemberImages/Saumya.webp";
+import V_Anuj from "/MemberImages/V_Anuj.webp";
+import Vidish from "/MemberImages/Vidish.webp";
+import Yashasvi from "/MemberImages/Yashasvi.webp";
+import sahil from "/MemberImages/sahil.webp";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
@@ -56,11 +56,11 @@ function TeamPage() {
       role: "Organizing Committee",
       image: `${Shaurya}`,
     },
-    {
-      name: "Saksham Jain",
-      role: "Organizing Committee",
-      image: `${Saksham}`,
-    },
+    // {
+    //   name: "Saksham Jain",
+    //   role: "Organizing Committee",
+    //   image: `${Saksham}`,
+    // },
     {
       name: "Sameer Modi",
       role: "Senior Manager",

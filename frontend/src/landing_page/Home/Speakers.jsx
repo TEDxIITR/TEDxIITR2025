@@ -1,32 +1,32 @@
 import { useEffect } from "react";
-import Frame from "/Speakers2024/Frame.png";
+import Frame from "/Speakers2024/Frame.webp";
 import { useRef, useState } from "react";
 import { gsap } from "gsap";
 
-import Sp1 from "/Speakers2024/Sp1.png";
-import Sp2 from "/Speakers2024/Sp2.png";
-import Sp3 from "/Speakers2024/Sp3.png";
-import Sp4 from "/Speakers2024/Sp4.png";
-import Sp5 from "/Speakers2024/Sp5.png";
-import Sp6 from "/Speakers2024/Sp6.png";
-import Sp7 from "/Sp2019/Sp7.png";
-import Sp8 from "/Sp2019/Sp8.png";
-// import Sp9 from "/Sp2019/Sp9.png";
-import Sp10 from "/Sp2019/Sp10.png";
-import Sp11 from "/Sp2019/Sp11.png";
-import Sp12 from "/Sp2019/Sp12.png";
-import Sp13 from "/Sp2019/Sp13.png"; // 2019
-import Sp14 from "/Sp2017/Sp14.png";
-import Sp15 from "/Sp2017/Sp15.png";
-import Sp16 from "/Sp2017/Sp16.png";
-import Sp17 from "/Sp2017/Sp17.png";
-import Sp18 from "/Sp2017/Sp18.png";
-import Sp19 from "/Sp2017/Sp19.png"; // 2017
-import Sp20 from "/Sp2016/Sp20.png";
-import Sp21 from "/Sp2016/Sp21.png";
-import Sp22 from "/Sp2016/Sp22.png";
-import Sp23 from "/Sp2016/Sp23.png";
-import Sp24 from "/Sp2016/Sp24.png";
+import Sp1 from "/Speakers2024/Sp1.webp";
+import Sp2 from "/Speakers2024/Sp2.webp";
+import Sp3 from "/Speakers2024/Sp3.webp";
+import Sp4 from "/Speakers2024/Sp4.webp";
+import Sp5 from "/Speakers2024/Sp5.webp";
+import Sp6 from "/Speakers2024/Sp6.webp";
+import Sp7 from "/Sp2019/Sp7.webp";
+import Sp8 from "/Sp2019/Sp8.webp";
+// import Sp9 from "/Sp2019/Sp9.webp";
+import Sp10 from "/Sp2019/Sp10.webp";
+import Sp11 from "/Sp2019/Sp11.webp";
+import Sp12 from "/Sp2019/Sp12.webp";
+import Sp13 from "/Sp2017/Sp13.webp"; // 2019
+import Sp14 from "/Sp2017/Sp14.webp";
+import Sp15 from "/Sp2017/Sp15.webp";
+import Sp16 from "/Sp2017/Sp16.webp";
+import Sp17 from "/Sp2017/Sp17.webp";
+import Sp18 from "/Sp2017/Sp18.webp";
+import Sp19 from "/Sp2017/Sp19.webp"; // 2017
+import Sp20 from "/Sp2016/Sp20.webp";
+import Sp21 from "/Sp2016/Sp21.webp";
+import Sp22 from "/Sp2016/Sp22.webp";
+import Sp23 from "/Sp2016/Sp23.webp";
+import Sp24 from "/Sp2016/Sp24.webp";
 
 const Speakers = () => {
   const [activeSpeaker, setActiveSpeaker] = useState(0);
@@ -258,7 +258,7 @@ const Speakers = () => {
     },
   ];
   const speakers2024 = [
-    { id: 1, name: "ANUJ", image: `${Sp1}` },
+    { id: 1, name: "M JAYAKUMAR", image: `${Sp1}` },
     {
       id: 2,
       name: "SAURABH, MANISHA",
@@ -390,7 +390,7 @@ const Speakers = () => {
 
   return (
     <div
-      className="w-full min-h-screen bg-cover bg-center "
+      className="w-full min-h-screen bg-cover bg-center px-20"
       ref={mainRef}
       style={{
         backgroundImage: `url(${Frame})`,
@@ -456,7 +456,7 @@ const Speakers = () => {
               </div>
             </div>
           </div>
-          <div className="relative z-10  flex justify-center items-end">
+          <div className="relative z-10  flex justify-center items-end w-[80] md:w-full">
             <div
               ref={carouselRef}
               className="flex gap-4 px-4 overflow-x-auto pb-8 pt-3 carousel carousel-center  max-w-md md:max-w-2xl mx-auto"
