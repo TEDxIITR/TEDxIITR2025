@@ -44,7 +44,7 @@ function EventCard({ image, title }) {
 
   return (
     <div
-      className="w-full md:w-[45%] lg:w-[40%] xl:w-[35%] relative transition-all duration-200 hover:scale-110"
+      className="w-[95%] md:w-[45%] lg:w-[40%] xl:w-[35%] relative transition-all duration-200 hover:scale-110"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
