@@ -46,11 +46,11 @@ const HomePage = () => {
       <section id="speakers-section">
         <SpearkersPage />
       </section>
-      {/* <section id="pastEvents-section">
-        <PastEventsPage />
-      </section> */}
       <section id="sponsers-section">
         <SponsersPage />
+      </section>
+      <section id="pastEvents-section">
+        <PastEventsPage />
       </section>
     </div>
   );

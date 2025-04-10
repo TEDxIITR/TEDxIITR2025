@@ -1,144 +1,69 @@
-import React from "react";
-const PastEvents = () => {
+import { useState } from "react";
+
+export default function PastEvents() {
   const events = [
     {
       id: 1,
-      title: "Chai Pe Charcha",
-      date: "4 NOV",
-      time: "5:30 PM",
-      venue: "MAC AUDI",
-      image: "/placeholder.svg?height=600&width=450",
-      year: "2024",
+      image: "/PrevEvents/Event1.webp",
+      title: "Event 2024: Chai Pe Charcha",
     },
     {
       id: 2,
-      title: "Abhyuday",
-      date: "10th March",
-      time: "5 PM",
-      venue: "MAC Audi",
-      image: "/placeholder.svg?height=600&width=450",
-      year: "2024",
+      image: "/PrevEvents/Event2.webp",
+      title: "Event 2024: Abhyuday",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col items-center py-16 px-4">
-      <h1 className="text-5xl md:text-7xl font-bold mb-16 tracking-wider">
-        PAST EVENTS
+    <div className="flex flex-col md:justify-evenly w-full md:min-h-screen justify-center items-center px-4 pb-20">
+      <h1
+        className="text-[#d9d9d9] text-5xl sm:text-7xl lg:text-8xl text-center mb-8 md:mb-16 font-extrabold leading-normal"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(110, 110, 110, 0.46) 46.23%, rgba(212, 212, 212, 0.00) 90.52%)",
+          WebkitBackgroundClip: "text",
+          backgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          fontWeight: "10rem",
+        }}
+      >
+        Past Events
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl">
+      <div className="flex flex-col md:flex-row justify-evenly items-center gap-8 w-full max-w-6xl">
         {events.map((event) => (
-          <div
-            key={event.id}
-            className="card bg-[#111111] border border-gray-800 shadow-xl overflow-hidden"
-          >
-            <div className="relative">
-              {/* TEDx Logo */}
-              <div className="absolute top-4 right-4 flex items-center">
-                <span className="text-xs font-bold mr-1">TEDx</span>
-                <span className="text-xs text-red-500 font-bold">
-                  IITRoorkee
-                </span>
-              </div>
-
-              {/* Event Title Section */}
-              <div className="p-6 pt-12">
-                {event.id === 1 ? (
-                  <div>
-                    <div className="text-sm mb-1">
-                      <span className="text-gray-400">Pre</span>
-                      <span className="text-red-500 font-bold">TED</span>
-                    </div>
-                    <h2 className="text-3xl font-bold">
-                      CHA<span className="text-yellow-500">☕</span>PE CHARCHA
-                    </h2>
-                  </div>
-                ) : (
-                  <div>
-                    <div className="text-sm mb-1">
-                      <span className="text-gray-400">
-                        TEDxIITRoorkee x Sangarsh Presents
-                      </span>
-                    </div>
-                    <h2 className="text-3xl font-bold text-red-500">
-                      ABHYUDAY
-                    </h2>
-                  </div>
-                )}
-
-                {/* Event Details */}
-                <div className="flex items-center mt-4 text-sm space-x-4">
-                  <div className="flex items-center">
-                    <span className="mr-1">📅</span>
-                    <span>{event.date}</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="mr-1">⏰</span>
-                    <span>{event.time}</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="mr-1">📍</span>
-                    <span>{event.venue}</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Event Image */}
-              <div className="h-48 bg-gray-800 relative">
-                {event.id === 1 ? (
-                  <div className="absolute inset-0 flex justify-center">
-                    <div className="grid grid-cols-4 w-full h-full">
-                      <div className="bg-gray-700 border-r border-gray-600"></div>
-                      <div className="bg-gray-700 border-r border-gray-600"></div>
-                      <div className="bg-gray-700 border-r border-gray-600"></div>
-                      <div className="bg-gray-700"></div>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="absolute inset-0 flex justify-center">
-                    <div className="grid grid-cols-3 w-full h-full">
-                      <div className="bg-gray-700 border-r border-gray-600"></div>
-                      <div className="bg-gray-700 border-r border-gray-600"></div>
-                      <div className="bg-gray-700"></div>
-                    </div>
-                  </div>
-                )}
-
-                {/* Red lines for the second card */}
-                {event.id === 2 && (
-                  <div className="absolute inset-0">
-                    <div className="w-full h-full overflow-hidden">
-                      {Array.from({ length: 10 }).map((_, i) => (
-                        <div
-                          key={i}
-                          className="absolute h-[1px] bg-red-500 opacity-30"
-                          style={{
-                            width: "150%",
-                            left: "-25%",
-                            top: `${i * 10}%`,
-                            transform: `rotate(${i % 2 === 0 ? 15 : -15}deg)`,
-                          }}
-                        ></div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Event Footer */}
-            <div className="p-4 bg-[#0a0a0a]">
-              <p className="font-semibold">
-                <span className="text-gray-400">Event {event.year}:</span>{" "}
-                {event.title}
-              </p>
-            </div>
-          </div>
+          <EventCard key={event.id} image={event.image} title={event.title} />
         ))}
       </div>
     </div>
   );
-};
+}
 
-export default PastEvents;
+function EventCard({ image, title }) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div
+      className="w-full md:w-[45%] lg:w-[40%] xl:w-[35%] relative transition-all duration-200 hover:scale-110"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <img
+        src={image || "/placeholder.svg"}
+        alt={title}
+        className={`border-2 object-cover object-center w-full rounded-lg transition-all duration-200 ${
+          isHovered ? "border-red-700" : "border-white"
+        }`}
+      />
+      <div
+        className={`absolute  bg-gradient-to-t from-black to-black/30 text-white p-4 rounded-lg border-3 transition-all duration-200 ${
+          isHovered
+            ? "bg-red-800 border-red-700 left-0 right-0 bottom-0 border-none"
+            : "border-gray-900 bottom-1 left-1 right-1"
+        }`}
+      >
+        <div className="text-lg font-semibold">{title}</div>
+      </div>
+    </div>
+  );
+}

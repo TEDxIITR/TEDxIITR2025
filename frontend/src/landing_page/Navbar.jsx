@@ -98,7 +98,7 @@ function Navbar() {
                     TEAM
                   </Link>
                 </button>
-                <button onClick={() => scrollToSection("events-section")}>
+                <button onClick={() => scrollToSection("pastEvents-section")}>
                   <Link
                     to="/"
                     className="text-white text-sm hover:text-red-500 transition-all duration-300 btn btn-ghost hover:scale-95"
@@ -154,9 +154,9 @@ function Navbar() {
                 TEAM
               </Link>
             </button>
-            <button onClick={() => scrollToSection("events-section")}>
+            <button onClick={() => scrollToSection("pastEvents-section")}>
               <Link
-                to="/"
+                to=""
                 className="text-white text-sm hover:text-red-500 transition-all duration-300 btn btn-ghost hover:scale-95"
               >
                 PREVIOUS EVENTS
