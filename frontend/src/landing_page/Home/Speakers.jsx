@@ -9,6 +9,7 @@ import Sp3 from "/Speakers2024/Sp3.webp";
 import Sp4 from "/Speakers2024/Sp4.webp";
 import Sp5 from "/Speakers2024/Sp5.webp";
 import Sp6 from "/Speakers2024/Sp6.webp";
+import Sp_7 from "/Speakers2024/Sp7 (1).webp";
 import Sp7 from "/Sp2019/Sp7.webp";
 import Sp8 from "/Sp2019/Sp8.webp";
 // import Sp9 from "/Sp2019/Sp9.webp";
@@ -287,7 +288,7 @@ const Speakers = () => {
     {
       id: 7,
       name: "MANISH BEHL",
-      image: `${Sp7}`,
+      image: `${Sp_7}`,
     },
   ];
   const speakers2016 = [
@@ -347,7 +348,7 @@ const Speakers = () => {
     },
   ];
   const speakers2019 = [
-    { id: 1, name: "MANISH BEHL", image: `${Sp7}` },
+    { id: 1, name: "R SUDHIR", image: `${Sp7}` },
     {
       id: 2,
       name: "JOSEPH RADHIK",
@@ -398,7 +399,7 @@ const Speakers = () => {
     >
       <div className="w-full flex justify-center md:justify-end">
         <h1
-          className=" text-[5rem] lg:text-[8rem] xl:text-[9rem] font-lexend font-extrabold leading-none tracking-[0.05em]"
+          className=" text-[4rem] lg:text-[8rem] xl:text-[9rem] font-lexend font-extrabold leading-none tracking-[0.05em]"
           style={{
             WebkitTextFillColor: "black",
             WebkitTextStrokeWidth: "0.90px",
@@ -413,7 +414,7 @@ const Speakers = () => {
           {sections.map((section, index) => (
             <button
               key={index}
-              className={`text-2xl cursor-pointer transition-all duration-300 ${
+              className={`text-lg md:text-2xl cursor-pointer transition-all duration-300 ${
                 activeSection === index
                   ? "text-red-500 font-bold scale-110"
                   : "text-gray-400 hover:text-gray-200"
