@@ -40,7 +40,7 @@ const Tapestry = () => {
   }, []);
 
   return (
-    <div className=" text-white flex flex-col md:flex-row justify-center items-center  gap-20  min-h-full md:px-16 md:pt-10 ">
+    <div className=" text-white flex flex-col md:flex-row justify-center items-center  gap-20  lg:min-h-full md:px-16 md:pt-10 ">
       <div className="md:w-1/2 md:mb-0 md:pr-8" ref={contentRef}>
         <h1 className="text-5xl  md:text-7xl lg:text-8xl uppercase tracking-wider mb-6 font-[marcellus]">
           <p className="mb-8">Tapestry</p>

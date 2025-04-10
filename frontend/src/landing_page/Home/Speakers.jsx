@@ -287,8 +287,8 @@ const Speakers = () => {
     },
     {
       id: 7,
-      name: "MANISH BEHL",
-      image: `${Sp_7}`,
+      name: "R SUDHIR",
+      image: `${Sp7}`,
     },
   ];
   const speakers2016 = [
@@ -348,7 +348,7 @@ const Speakers = () => {
     },
   ];
   const speakers2019 = [
-    { id: 1, name: "R SUDHIR", image: `${Sp7}` },
+    { id: 1, name: "MANISH BEHL", image: `${Sp_7}` },
     {
       id: 2,
       name: "JOSEPH RADHIK",
@@ -391,7 +391,7 @@ const Speakers = () => {
 
   return (
     <div
-      className="w-full min-h-screen bg-cover bg-center px-20"
+      className="w-full lg:min-h-screen bg-cover bg-center px-20 py-10"
       ref={mainRef}
       style={{
         backgroundImage: `url(${Frame})`,
@@ -409,7 +409,7 @@ const Speakers = () => {
           SPEAKER
         </h1>
       </div>
-      <div className="flex justify-center  gap-10 md:gap-10 items-center">
+      <div className="flex justify-center md:justify-between md:px-50 gap-10 md:gap-10 items-center">
         <div className="flex flex-col mt-20 md:mt-0 gap-2">
           {sections.map((section, index) => (
             <button

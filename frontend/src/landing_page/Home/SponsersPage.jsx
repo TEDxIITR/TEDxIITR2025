@@ -2,7 +2,7 @@ import React from "react";
 import Sponsers from "./Sponsers";
 const SponsersPage = () => {
   return (
-    <div className="min-h-screen w-full">
+    <div className="lg:min-h-screen w-full">
       <Sponsers />
     </div>
   );

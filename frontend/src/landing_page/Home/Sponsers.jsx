@@ -12,7 +12,7 @@ import TOI from "/Sponsers/TOI.webp";
 const Sponsers = () => {
   return (
     <main>
-      <section className="min-h-full md:w-full md:pb-10">
+      <section className="lg:min-h-full md:w-full pb-10">
         <h1
           className="text-[#d9d9d9] text-7xl  md:text-7xl lg:text-8xl text-center mb-16  font-passion font-extrabold leading-normal"
           style={{
