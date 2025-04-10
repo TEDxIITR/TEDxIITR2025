@@ -39,7 +39,6 @@ function Navbar() {
         </Link>
         {isSmallScreen ? (
           <div className="drawer flex justify-end">
-            {/* Drawer Checkbox with Ref */}
             <input
               id="my-drawer"
               type="checkbox"
