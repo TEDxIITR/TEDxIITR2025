@@ -164,10 +164,12 @@ export default function Hero() {
               <div className="relative z-10 flex items-center left-10 bottom-22 justify-center h-screen">
                 <button
                   onClick={handlePlayVideo}
-                  className="bg-black hover:bg-red-700 transition-all duration-300 bg-opacity-50 text-white px-4 py-2 rounded hover:scale-1.5 absolute right-0 cursor-pointer tooltip"
+                  className={`bg-black hover:bg-red-700 transition-all duration-300 bg-opacity-50 text-white px-4 py-2 rounded hover:scale-1.5 absolute right-0 cursor-pointer tooltip ${
+                    sound ? " bg-black" : "bg-red-700"
+                  }`}
                   data-tip={`${sound ? "sound" : "Mute"}`}
                 >
-                  {sound ? <VscUnmute /> : <IoVolumeMute />}
+                  {sound ? <IoVolumeMute /> : <VscUnmute />}
                 </button>
               </div>
             </div>
