@@ -17,7 +17,7 @@ export default function PastEvents() {
   return (
     <div className="flex flex-col md:justify-evenly w-full md:min-h-screen justify-center items-center px-4 pb-20">
       <h1
-        className="text-[#d9d9d9] text-7xl  md:text-7xl lg:text-8xl text-center mb-16  font-passion font-extrabold leading-normal"
+        className="text-[#d9d9d9] text-6xl  md:text-7xl lg:text-8xl text-center mb-16  font-passion font-extrabold leading-normal"
         style={{
           background:
             "linear-gradient(180deg, rgba(110, 110, 110, 0.46) 46.23%, rgba(212, 212, 212, 0.00) 90.52%)",
