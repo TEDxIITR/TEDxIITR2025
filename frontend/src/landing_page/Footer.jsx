@@ -45,19 +45,28 @@ function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="#" className="hover:text-white">
+              <a
+                href="https://www.instagram.com/tedxiitroorkee/"
+                className="hover:text-white"
+              >
                 Instagram
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="#" className="hover:text-white">
+              <a
+                href="https://www.linkedin.com/company/tedxiitroorkee/"
+                className="hover:text-white"
+              >
                 LinkedIn
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="#" className="hover:text-white">
+              <a
+                href="https://www.youtube.com/@TEDx"
+                className="hover:text-white"
+              >
                 Youtube
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
@@ -93,7 +102,7 @@ function Footer() {
               Watch the latest TEDxIITRoorkee events on your screen
             </p>
             <a
-              href="https://youtube.com"
+              href="https://www.youtube.com/@TEDx"
               className="btn bg-[#eb0028] hover:bg-[#d70000] text-white border-none rounded"
             >
               See on youtube
