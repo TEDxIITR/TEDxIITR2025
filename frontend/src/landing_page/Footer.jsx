@@ -87,7 +87,7 @@ function Footer() {
         <div className="">
           <div>
             <h3 className="font-bold text-white  mb-4">
-              TedxIITRoorkee Recorded
+              TEDxIITRoorkee Recorded
             </h3>
             <p className="text-md text-[#b6b6b6] mb-4">
               Watch the latest TEDxIITRoorkee events on your screen

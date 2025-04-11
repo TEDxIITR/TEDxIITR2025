@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import X from "../../../public/Logos/X.png";
 import gsap from "gsap";
@@ -53,11 +54,11 @@ const Tapestry = () => {
         </p>
 
         <div className="flex flex-row gap-4">
-          <a href="https://forms.gle/EMXvZbQt1qQaiH7EA" target="_blank">
+          <Link to="/ticket">
             <button className=" w-[8rem] py-1 border-2 cursor-pointer bg-red-600 border-red-600 rounded-md  hover:bg-black hover:border-black hover:text-white transition-all duration-300 text-lg">
               Buy Ticket
             </button>
-          </a>
+          </Link>
 
           <a href="https://forms.gle/UW98dUDGD8VBSiHAA" target="_blank">
             <button className=" w-[8rem] py-1 border-2 cursor-pointer border-white rounded-md hover:bg-white hover:text-black transition-all duration-300 text-lg">

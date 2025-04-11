@@ -23,7 +23,7 @@ export default function TedxBooking() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#070707] relative overflow-hidden flex justify-center items-center">
+    <div className="min-h-screen bg-[#070707] relative overflow-hidden flex justify-center items-center md:px-10">
       <div className="absolute inset-0 opacity-20 z-0">
         <img
           src={Frame}
