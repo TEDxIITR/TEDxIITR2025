@@ -24,7 +24,7 @@ const Sponsers = () => {
             fontWeight: "10rem",
           }}
         >
-          Sponsors
+          Past Sponsors
         </h1>
         <div className="flex w-[100%] md:w-full gap-2.5 flex-col md:gap-10 justify-self-center">
           <div className="flex gap-4 justify-center md:gap-15">

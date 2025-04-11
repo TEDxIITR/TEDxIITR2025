@@ -9,119 +9,133 @@ const events = [
   {
     id: 1,
     type: "work",
+    iconColor: "black",
     date: "TEDxIITRoorkee 2013",
     title: "TEDxIITRoorkee 2013",
 
-    background: "white",
+    background: "transparent",
     color: "#fff",
   },
   {
     id: 2,
     type: "work",
+    iconColor: "black",
     date: "TEDxIITRoorkee 2014",
     title: "Art Director",
 
-    background: "white",
+    background: "transparent",
     color: "#fff",
   },
   {
     id: 3,
     type: "work",
+    iconColor: "black",
     date: "TEDxIITRoorkee 2015",
 
     description: "User Experience, Visual Design",
-    background: "white",
+    background: "transparent",
     color: "#fff",
   },
   {
     id: 4,
     type: "work",
+    iconColor: "black",
     date: "TEDxIITRoorkee 2016",
 
     description: "User Experience, Visual Design",
-    background: "white",
+    background: "transparent",
     color: "#fff",
   },
   {
     id: 5,
     type: "work",
+    iconColor: "black",
     date: "TEDxIITRoorkee 2017",
 
     description: "User Experience, Visual Design",
-    background: "white",
+    background: "transparent",
     color: "#fff",
   },
   {
-    id: 4,
+    id: 6,
     type: "work",
+    iconColor: "black",
     date: "TEDxIITRoorkee 2018",
 
     description: "User Experience, Visual Design",
-    background: "white",
+    background: "transparent",
     color: "#fff",
   },
   {
-    id: 4,
+    id: 7,
     type: "work",
+    iconColor: "black",
     date: "TEDxIITRoorkee 2019",
 
     description: "User Experience, Visual Design",
-    background: "white",
+    background: "transparent",
     color: "#fff",
   },
   {
-    id: 4,
+    id: 8,
     type: "work",
+    iconColor: "black",
     date: "TEDxIITRoorkee 2020",
 
     description: "User Experience, Visual Design",
-    background: "red",
+    background: "transparent",
     color: "red",
   },
   {
-    id: 4,
+    id: 9,
     type: "work",
+    iconColor: "black",
     date: "TEDxIITRoorkee 2021",
 
     description: "User Experience, Visual Design",
-    background: "red",
+    background: "transparent",
     color: "red",
   },
   {
-    id: 4,
+    id: 10,
     type: "work",
+    iconColor: "black",
     date: "TEDxIITRoorkee 2022",
 
     description: "User Experience, Visual Design",
-    background: "red",
+    background: "transparent",
     color: "red",
   },
   {
-    id: 4,
+    id: 11,
     type: "work",
+    iconColor: "black",
     date: "TEDxIITRoorkee 2023",
 
     description: "User Experience, Visual Design",
-    background: "red",
+    background: "transparent",
     color: "red",
   },
   {
-    id: 4,
+    id: 12,
     type: "work",
+    iconColor: "black",
     date: "TEDxIITRoorkee 2024",
 
     description: "User Experience, Visual Design",
-    background: "red",
-    color: "red",
+    background: "transparent",
+    color: "white",
   },
   {
-    id: 4,
+    id: 13,
     type: "work",
+    iconColor: "linear-gradient(to top, black, red)",
     date: "TEDxIITRoorkee 2025",
 
     description: "User Experience, Visual Design",
-    background: "#fff",
-    color: "#fff",
+    background:
+      "linear-gradient(90deg,black 0%, rgba(166, 28, 134, 1) 0%, darkred 0%, black 100%, darkred 36%)",
+    color: "white",
   },
 ];
 
@@ -133,8 +147,8 @@ const EventsLine = () => {
           <VerticalTimelineElement
             key={event.id}
             contentStyle={{
-              background: "#343434",
-              backgroundColor: "transparent",
+              // background: "#343434",
+              background: event.background,
               textAlign: "center",
               fontStyle: "italic",
               display: "flex",
@@ -146,9 +160,14 @@ const EventsLine = () => {
               paddingBottom: "0rem",
               paddingLeft: "0rem",
               paddingRight: "0rem",
-              borderTop: "3px solid white",
-              borderLeft: "3px solid white",
-              borderRight: "3px solid white",
+              boxShadow: `${
+                event.id == 13
+                  ? "box-shadow: 8px 8px 15px -3px rgba(255, 0, 0, 0.6)"
+                  : ""
+              }`,
+              // borderTop: "3px solid white",
+              // borderLeft: "3px solid white",
+              // borderRight: "3px solid white",
               fontFamily: "Inter, sans-serif",
               style: "transperant",
               color: event.color,
@@ -158,7 +177,7 @@ const EventsLine = () => {
             }}
             // date={event.date}
             iconStyle={{
-              background: event.background,
+              background: event.iconColor,
               color: event.color,
 
               width: "20px",
