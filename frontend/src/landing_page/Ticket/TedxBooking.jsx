@@ -154,7 +154,7 @@ export default function TedxBooking() {
                     <span className="text-white/70 line-through text-sm line-through">
                       ₹1,198
                     </span>
-                    <span className="text-white font-bold">₹999</span>
+                    <span className="text-white font-bold">₹899</span>
                     <span className="text-white bg-white/20 px-2 py-0.5 rounded text-xs text-yellow-200">
                       16% off
                     </span>

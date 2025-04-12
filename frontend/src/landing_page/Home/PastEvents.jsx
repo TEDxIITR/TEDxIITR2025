@@ -12,6 +12,11 @@ export default function PastEvents() {
       image: "/PrevEvents/Event2.webp",
       title: "Event 2024: Abhyuday",
     },
+    // {
+    //   id: 3,
+    //   image: "/PrevEvents/Event3.webp",
+    //   title: "Event 2024: Defying Defiance",
+    // },
   ];
 
   return (
@@ -30,7 +35,9 @@ export default function PastEvents() {
         Past Events
       </h1>
 
-      <div className="flex flex-col md:flex-row justify-evenly items-center gap-8 w-full max-w-6xl">
+      <div
+        className={`flex flex-col md:flex-row justify-evenly items-center gap-8 w-full max-w-6xl`}
+      >
         {events.map((event) => (
           <EventCard key={event.id} image={event.image} title={event.title} />
         ))}
