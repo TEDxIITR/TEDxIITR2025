@@ -409,7 +409,7 @@ const Speakers = () => {
         backgroundImage: `url(${Frame})`,
       }}
     >
-      <div className="w-full flex justify-center md:justify-end">
+      <div className="w-full flex justify-center lg:justify-end">
         <h1
           className=" text-[4rem] lg:text-[8rem] xl:text-[9rem] font-lexend font-extrabold leading-none tracking-[0.05em]"
           style={{
@@ -438,19 +438,19 @@ const Speakers = () => {
           ))}
         </div>
         <div>
-          <div className="flex flex-col items-center sm:flex-row gap-10 md:gap-10 md:justify-center w-full md:h-[25rem] ">
+          <div className="flex flex-col items-center lg:flex-row gap-10 md:gap-10 md:justify-center w-full md:h-[25rem] ">
             <div
               className="flex flex-col justify-center w-full items-center md:items-end md:pl-12"
               ref={speakerNameRef}
             >
-              <div className="text-white text-5xl md:text-7xl font-extrabold tracking-[0.5rem]">
+              <div className="text-white text-5xl lg:text-7xl font-extrabold tracking-[0.5rem]">
                 {
                   sections[activeSection].speakers[activeSpeaker].name.split(
                     " "
                   )[0]
                 }
               </div>
-              <div className="text-white text-3xl md:text-5xl font-bold tracking-[0.5rem]">
+              <div className="text-white text-3xl lg:text-5xl font-bold tracking-[0.5rem]">
                 {sections[activeSection].speakers[activeSpeaker].name.split(
                   " "
                 )[1] || ""}
