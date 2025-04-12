@@ -28,6 +28,13 @@ import Sp21 from "/Sp2016/Sp21.webp";
 import Sp22 from "/Sp2016/Sp22.webp";
 import Sp23 from "/Sp2016/Sp23.webp";
 import Sp24 from "/Sp2016/Sp24.webp";
+import Sp25 from "/Speakers2025/Sp25.webp";
+import Sp26 from "/Speakers2025/Sp26.webp";
+import Sp27 from "/Speakers2025/Sp27.webp";
+import Sp28 from "/Speakers2025/Sp28.webp";
+import Sp29 from "/Speakers2025/Sp29.webp";
+import Sp30 from "/Speakers2025/Sp30.webp";
+import Sp31 from "/Speakers2025/Sp31.webp";
 
 const Speakers = () => {
   const [activeSpeaker, setActiveSpeaker] = useState(0);
@@ -229,33 +236,38 @@ const Speakers = () => {
   const speakers2025 = [
     {
       id: 1,
-      name: "Mohit Tyagi",
-      //  image: `${}`
+      name: "MOHIT TYAGI",
+      image: `${Sp26}`,
     },
     {
       id: 2,
-      name: "Soumesh Pandey",
-      // image: `${}`,
+      name: "MANYA SINGH",
+      image: `${Sp27}`,
     },
     {
       id: 3,
-      name: "Rahul Choudhary",
-      // image: `${}`,
+      name: "RAHUL CHAUDHARI",
+      image: `${Sp31}`,
     },
     {
       id: 4,
-      name: "Bijay N Nair",
-      // image: `${}`,
+      name: "KHUSHBOO PATANI",
+      image: `${Sp30}`,
     },
     {
       id: 5,
-      name: "Azhar Iqbal",
-      // image: `${}`,
+      name: "SOUMESH PANDEY",
+      image: `${Sp25}`,
     },
+    // {
+    //   id: 6,
+    //   name: "SUMEET ANAND",
+    //   image: `${Sp28}`,
+    // },
     {
-      id: 6,
-      name: "Sumeet Anand",
-      // image: `${}`,
+      id: 7,
+      name: "AZHAR IQBAL",
+      image: `${Sp29}`,
     },
   ];
   const speakers2024 = [
@@ -272,17 +284,17 @@ const Speakers = () => {
     },
     {
       id: 4,
-      name: "AMAN DHATTARWAAL",
+      name: "AMAN DHATTARWAL",
       image: `${Sp4}`,
     },
     {
       id: 5,
-      name: "DHANAJYA JOSHI",
+      name: "DHANANJAY JOSHI",
       image: `${Sp5}`,
     },
     {
       id: 6,
-      name: "RAJEEV BRARWAN",
+      name: "RAJEEV BHARWAN",
       image: `${Sp6}`,
     },
     {
@@ -382,7 +394,7 @@ const Speakers = () => {
   ];
 
   const sections = [
-    // { year: "2025", speakers: speakers2025 },
+    { year: "2025", speakers: speakers2025 },
     { year: "2024", speakers: speakers2024 },
     { year: "2019", speakers: speakers2019 },
     { year: "2017", speakers: speakers2017 },

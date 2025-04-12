@@ -14,7 +14,7 @@ const Sponsers = () => {
     <main>
       <section className="lg:min-h-full md:w-full pb-10 px-5">
         <h1
-          className="text-[#d9d9d9] text-7xl  md:text-7xl lg:text-8xl text-center mb-16  font-passion font-extrabold leading-normal"
+          className="text-[#d9d9d9] text-6xl  md:text-7xl lg:text-8xl text-center mb-16  font-passion font-extrabold leading-normal"
           style={{
             background:
               "linear-gradient(180deg, rgba(110, 110, 110, 0.46) 46.23%, rgba(212, 212, 212, 0.00) 90.52%)",

@@ -102,7 +102,7 @@ function Navbar() {
                     to="/"
                     className="text-white text-sm hover:text-red-500 transition-all duration-300 btn btn-ghost hover:scale-95"
                   >
-                    PREVIOUS EVENTS
+                    PAST EVENTS
                   </Link>
                 </button>
 
@@ -158,7 +158,7 @@ function Navbar() {
                 to=""
                 className="text-white text-sm hover:text-red-500 transition-all duration-300 btn btn-ghost hover:scale-95"
               >
-                PREVIOUS EVENTS
+                PAST EVENTS
               </Link>
             </button>
 
