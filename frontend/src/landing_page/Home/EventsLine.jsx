@@ -141,7 +141,7 @@ const events = [
 
 const EventsLine = () => {
   return (
-    <div className="w-full lg:w-[65%] flex justify-center align-middle my-auto px-10 md:px-0">
+    <div className="w-full md:w-[65%] flex justify-center align-middle my-auto px-10 md:px-0">
       <VerticalTimeline>
         {events.map((event) => (
           <VerticalTimelineElement
@@ -159,6 +159,7 @@ const EventsLine = () => {
               paddingTop: "0rem",
               paddingBottom: "0rem",
               paddingLeft: "0rem",
+              // lineHeight: "1rem",
               paddingRight: "0rem",
               boxShadow: `${
                 event.id == 13

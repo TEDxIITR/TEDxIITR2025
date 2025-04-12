@@ -116,7 +116,7 @@ export default function Hero() {
 
   return (
     <>
-      <main className="bg-[#0e0e0e] min-h-screen text-white overflow-hidden lg:pl-10 lg:pr-10">
+      <main className="bg-[#0e0e0e] lg:min-h-screen text-white overflow-hidden lg:pl-10 lg:pr-10">
         <section
           ref={themeRef}
           className="container mx-auto px-4 pt-20 relative"
