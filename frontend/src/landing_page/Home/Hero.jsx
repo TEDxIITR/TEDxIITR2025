@@ -137,17 +137,14 @@ export default function Hero() {
           {/* grid md:grid-cols-2 gap-8 items-center */}
           <div className="w-full flex flex-col md:flex-row md:justify-between md:items-center gap-20">
             <div className="theme-content max-w-2xl">
-              <p className="text-sm md:text-base leading-relaxed">
-                TEDxIITRoorkee is organized by a group of enthusiasts who form a
-                part of the Entrepreneurship Cell IIT Roorkee. The spirit of TED
-                aligns closely with the primary aspiration of the E-CELL, which
-                is to foster the dissemination of knowledge, innovation, and
-                inspiration. Since its inception in 2010, TEDx IITRoorkee has
-                now become an annual event, playing host to a multitude of
-                speakers from various walks of life. TEDxIITRoorkee boasts of an
-                active following online, through its website and on various
-                social media channels. This year, it's coming back on April
-                20th, 2025.
+              <p className="text-md md:text-base leading-relaxed">
+                The theme “Tapestry of Time” weaves together the threads of
+                past, present, and future, celebrating the rich interplay of
+                experiences, ideas, and innovations that shape our journey. It
+                invites us to reflect on timeless wisdom, embrace the now, and
+                envision a future crafted by conscious action. Through this
+                theme, TEDxIITRoorkee aims to explore how individual stories and
+                collective moments form the intricate fabric of human progress.
               </p>
             </div>
 
@@ -249,7 +246,7 @@ export default function Hero() {
           </h1>
 
           <div className="">
-            <p className="text-sm md:text-base leading-relaxed mb-20 md:w-[90%]">
+            <p className="text-md md:text-base leading-relaxed mb-20 md:w-[90%]">
               TEDxIITRoorkee is organized by a group of enthusiasts who form a
               part of the Entrepreneurship Cell IIT Roorkee. The spirit of TED
               aligns closely with the primary aspiration of the E-CELL, which is
