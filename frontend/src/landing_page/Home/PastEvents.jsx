@@ -12,11 +12,11 @@ export default function PastEvents() {
       image: "/PrevEvents/Event2.webp",
       title: "Event 2024: Abhyuday",
     },
-    // {
-    //   id: 3,
-    //   image: "/PrevEvents/Event3.webp",
-    //   title: "Event 2024: Defying Defiance",
-    // },
+    {
+      id: 3,
+      image: "/PrevEvents/Event3.webp",
+      title: "Event 2024: Defying Defiance",
+    },
   ];
 
   return (
