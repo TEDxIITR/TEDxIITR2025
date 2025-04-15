@@ -45,7 +45,7 @@ const Speakers = () => {
   const carouselItemsRef = useRef([]);
   const mainRef = useRef(null);
 
-  const speakerTextRef = useRef(null);
+  // const speakerTextRef = useRef(null);
 
   const centerActiveSpeaker = (index) => {
     if (!carouselRef.current || !carouselItemsRef.current[index]) return;
@@ -113,7 +113,7 @@ const Speakers = () => {
 
   const handleSpeakerClick = (index) => {
     if (index === activeSpeaker) return;
-    const timeline = gsap.timeline();
+    // const timeline = gsap.timeline();
 
     setActiveSpeaker(index);
 
@@ -128,7 +128,7 @@ const Speakers = () => {
       {
         opacity: 1,
         y: 0,
-        duration: 0.5,
+        duration: 0.6,
         stagger: 0.1,
         ease: "power1.out",
       }
@@ -172,7 +172,7 @@ const Speakers = () => {
 
     gsap.fromTo(
       speakerNameRef.current.children,
-      { opacity: 0, y: 100 },
+      { opacity: 0, y: 100, duration: 0.2 },
       {
         opacity: 1,
         y: 0,
@@ -438,9 +438,9 @@ const Speakers = () => {
           ))}
         </div>
         <div>
-          <div className="flex flex-col items-center lg:flex-row gap-10 md:gap-10 md:justify-center w-full md:h-[25rem] ">
+          <div className="flex flex-col-reverse items-center lg:flex-row gap-10 md:gap-10 md:justify-center w-full md:h-[25rem] ">
             <div
-              className="flex flex-col justify-center w-full items-center md:items-end md:pl-12"
+              className="flex flex-col pb-5 md:pb-0 justify-center w-full items-center md:items-end md:pl-12"
               ref={speakerNameRef}
             >
               <div className="text-white text-5xl lg:text-7xl font-extrabold tracking-[0.5rem]">

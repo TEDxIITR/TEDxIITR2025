@@ -4,7 +4,7 @@ import SpearkersPage from "./SpearkersPage";
 import TapestryPage from "./TapestryPage";
 import SponsersPage from "./SponsersPage";
 import PastEventsPage from "./PastEventsPage";
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import EventsLinePage from "./EventsLinePage";
