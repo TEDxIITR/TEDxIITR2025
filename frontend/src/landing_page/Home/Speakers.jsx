@@ -66,13 +66,11 @@ const Speakers = () => {
 
   const handleSectionClick = (index) => {
     setActiveSection(index);
-    setActiveSpeaker(0); // Reset to first speaker when changing years
+    setActiveSpeaker(0);
 
-    // Update carousel after state change
     setTimeout(() => {
       centerActiveSpeaker(0);
 
-      // Animate the speaker name and image when changing sections
       gsap.fromTo(
         speakerNameRef.current.children,
         { opacity: 0, y: 100 },
@@ -443,14 +441,28 @@ const Speakers = () => {
               className="flex flex-col pb-5 md:pb-0 justify-center w-full items-center md:items-end md:pl-12"
               ref={speakerNameRef}
             >
-              <div className="text-white text-5xl lg:text-7xl font-extrabold tracking-[0.5rem]">
+              <div
+                className={`text-white  ${
+                  sections[activeSection].speakers[activeSpeaker].name ==
+                  "KHUSHBOO PATANI"
+                    ? "text-4xl"
+                    : "text-5xl"
+                } lg:text-7xl font-extrabold tracking-[0.5rem]`}
+              >
                 {
                   sections[activeSection].speakers[activeSpeaker].name.split(
                     " "
                   )[0]
                 }
               </div>
-              <div className="text-white text-3xl lg:text-5xl font-bold tracking-[0.5rem]">
+              <div
+                className={`text-white   ${
+                  sections[activeSection].speakers[activeSpeaker].name ==
+                  "KHUSHBOO PATANI"
+                    ? "text-2xl"
+                    : "text-3xl"
+                } lg:text-5xl font-bold tracking-[0.5rem]`}
+              >
                 {sections[activeSection].speakers[activeSpeaker].name.split(
                   " "
                 )[1] || ""}
