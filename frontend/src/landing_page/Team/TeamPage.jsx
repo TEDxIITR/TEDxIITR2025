@@ -10,7 +10,7 @@ import Sameer from "/MemberImages/Sameer.webp";
 import Shaurya from "/MemberImages/Shaurya.webp";
 import Saumya from "/MemberImages/Saumya.webp";
 import V_Anuj from "/MemberImages/V_Anuj.webp";
-import Vidish from "/MemberImages/vidish.webp";
+import Vidish from "/MemberImages/Vidish.webp";
 import Yashasvi from "/MemberImages/Yashasvi.webp";
 import sahil from "/MemberImages/sahil.webp";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
