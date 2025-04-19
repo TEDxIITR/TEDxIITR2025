@@ -249,7 +249,7 @@ function TeamPage() {
           Team
         </h1>
         <div
-          className="flex flex-wrap px-2 sm:px-0  lg:gap-12 mx-auto justify-between items-center"
+          className="flex flex-wrap px-2   gap-0 lg:gap-12 justify-between items-center"
           ref={teamRef}
         >
           {teamMembers.map((member, index) => (
