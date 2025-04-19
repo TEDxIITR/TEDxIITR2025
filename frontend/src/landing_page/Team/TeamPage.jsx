@@ -107,7 +107,7 @@ function TeamPage() {
       </h1>
       <div className="flex flex-col gap-14">
         <h1 className="text-center text-[white] text-3xl md:text-4xl font-extrabold -tracking-tighter">
-          ADVISORS
+          Convenors
         </h1>
         <div
           className="flex flex-wrap justify-between px-2 gap-0 xl:px-50 items-center"
