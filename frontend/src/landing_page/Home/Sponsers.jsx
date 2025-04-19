@@ -106,7 +106,7 @@ const Sponsers = () => {
             </h1>
             <img
               src="/Logos/MediaPartner.webp"
-              className="w-[60%] rounded-md"
+              className="w-[60%] lg:w-[50%] rounded-md"
               alt=""
             />
           </div>
