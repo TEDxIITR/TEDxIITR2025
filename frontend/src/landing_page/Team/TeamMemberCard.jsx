@@ -1,11 +1,11 @@
 import { GrLinkedin } from "react-icons/gr";
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ImLinkedin } from "react-icons/im";
 import Linkedin from "../../../public/Logos/Linkedin.png";
 
 function TeamMemberCard({ name, role, image }) {
-  const [display, setDisplay] = useState(true);
+  // const [display, setDisplay] = useState(true);
 
   const cardRef = useRef(null);
   const overlayRef = useRef(null);
@@ -38,7 +38,7 @@ function TeamMemberCard({ name, role, image }) {
   }, []);
 
   const handleMouseEnter = () => {
-    setDisplay(false);
+    // setDisplay(false);
 
     if (cardRef.current) {
       gsap.to(cardRef.current, {
@@ -73,7 +73,7 @@ function TeamMemberCard({ name, role, image }) {
   };
 
   const handleMouseLeave = () => {
-    setDisplay(true);
+    // setDisplay(true);
 
     if (cardRef.current) {
       gsap.to(cardRef.current, {
