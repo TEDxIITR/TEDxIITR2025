@@ -8,18 +8,30 @@ import Ram from "/MemberImages/Ram.webp";
 // import Saksham from "/MemberImages/Saksham.webp";
 import Sameer from "/MemberImages/Sameer.webp";
 import Shaurya from "/MemberImages/Shaurya.webp";
-import Saumya from "/MemberImages/Saumya.webp";
+import Saumya from "/MemberImages/saumya.webp";
 import V_Anuj from "/MemberImages/V_Anuj.webp";
-import Vidish from "/MemberImages/Vidish.webp";
+import Vidish from "/MemberImages/vidish.webp";
 import Yashasvi from "/MemberImages/Yashasvi.webp";
 import sahil from "/MemberImages/sahil.webp";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useState, useRef, useEffect } from "react";
-import gsap from "gsap";
+import { useRef } from "react";
+// import gsap from "gsap";
 
 function TeamPage() {
   const teamRef = useRef(null);
 
+  const Advisors = [
+    {
+      name: "Saumya Singh",
+      role: "Curator",
+      image: `${Saumya}`,
+    },
+    {
+      name: "Vidish Mishra",
+      role: "Co-Curator",
+      image: `${Vidish}`,
+    },
+  ];
   const teamMembers = [
     {
       name: "Anukriti Sethi",
@@ -31,16 +43,7 @@ function TeamPage() {
       role: "Advisory",
       image: `${Yashasvi}`,
     },
-    {
-      name: "Saumya Singh",
-      role: "Curator",
-      image: `${Saumya}`,
-    },
-    {
-      name: "Vidish Mishra",
-      role: "Co-Curator",
-      image: `${Vidish}`,
-    },
+
     {
       name: "Aman Kumar",
       role: "Organizing Committee",
@@ -99,22 +102,42 @@ function TeamPage() {
       className="py-16 px-6 w-full min-h-screen"
       style={{ backgroundColor: "#0E0E0E" }}
     >
-      <h1 className="text-center text-[#555555] text-5xl md:text-6xl font-bold mb-16">
+      <h1 className="text-center text-[#555555] text-5xl md:text-6xl font-extrabold mb-16">
         MEET OUR TEAM
       </h1>
+      <div className="flex flex-col gap-14">
+        <h1 className="text-center text-[white] text-3xl md:text-4xl font-extrabold -tracking-tighter">
+          ADVISORS
+        </h1>
+        <div
+          className="flex flex-wrap justify-between px-2 gap-0 xl:px-50 items-center"
+          ref={teamRef}
+        >
+          {Advisors.map((member, index) => (
+            <TeamMemberCard
+              key={index}
+              name={member.name}
+              role={member.role}
+              image={member.image}
+            />
+          ))}
+        </div>
+      </div>
 
-      <div
-        className="flex flex-wrap  mx-auto justify-between items-center"
-        ref={teamRef}
-      >
-        {teamMembers.map((member, index) => (
-          <TeamMemberCard
-            key={index}
-            name={member.name}
-            role={member.role}
-            image={member.image}
-          />
-        ))}
+      <div>
+        <div
+          className="flex flex-wrap px-2 sm:px-0 mx-auto justify-between items-center"
+          ref={teamRef}
+        >
+          {teamMembers.map((member, index) => (
+            <TeamMemberCard
+              key={index}
+              name={member.name}
+              role={member.role}
+              image={member.image}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

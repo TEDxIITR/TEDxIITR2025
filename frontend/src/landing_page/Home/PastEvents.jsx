@@ -34,7 +34,6 @@ export default function PastEvents() {
       >
         Past Events
       </h1>
-
       <div
         className={`flex flex-col md:flex-row justify-evenly items-center gap-8 w-full max-w-6xl`}
       >

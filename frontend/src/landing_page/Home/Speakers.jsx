@@ -35,6 +35,10 @@ import Sp28 from "/Speakers2025/Sp28.webp";
 import Sp29 from "/Speakers2025/Sp29.webp";
 import Sp30 from "/Speakers2025/Sp30.webp";
 import Sp31 from "/Speakers2025/Sp31.webp";
+import Pranay from "/Speakers2025/Pranay.webp";
+import YashWardhan from "/Speakers2025/Yashwardhan.webp";
+import Kirti from "/Speakers2025/Kirti.webp";
+import Shekinah from "/Speakers2025/Shekinah.webp";
 
 const Speakers = () => {
   const [activeSpeaker, setActiveSpeaker] = useState(0);
@@ -249,23 +253,23 @@ const Speakers = () => {
     },
     {
       id: 4,
-      name: "KHUSHBOO PATANI",
-      image: `${Sp30}`,
+      name: "PRANAY SHARMA",
+      image: `${Pranay}`,
     },
     {
       id: 5,
-      name: "SOUMESH PANDEY",
-      image: `${Sp25}`,
+      name: "KIRTI",
+      image: `${Kirti}`,
     },
-    // {
-    //   id: 6,
-    //   name: "SUMEET ANAND",
-    //   image: `${Sp28}`,
-    // },
+    {
+      id: 6,
+      name: "SHEKINAH MUKHIYA",
+      image: `${Shekinah}`,
+    },
     {
       id: 7,
-      name: "AZHAR IQBAL",
-      image: `${Sp29}`,
+      name: "YASHWARDHAN SINGH",
+      image: `${YashWardhan}`,
     },
   ];
   const speakers2024 = [
@@ -436,18 +440,25 @@ const Speakers = () => {
           ))}
         </div>
         <div>
-          <div className="flex flex-col-reverse items-center lg:flex-row gap-10 md:gap-10 md:justify-center w-full md:h-[25rem] ">
+          <div className="flex flex-col-reverse items-center lg:flex-row gap-10 md:gap-10 md:justify-center w-full text-xl md:h-[25rem] ">
             <div
-              className="flex flex-col pb-5 md:pb-0 justify-center w-full items-center md:items-end md:pl-12"
+              className="flex flex-col pb-5 md:pb-0 justify-center w-full  items-center md:items-end md:pl-12"
               ref={speakerNameRef}
             >
               <div
                 className={`text-white  ${
                   sections[activeSection].speakers[activeSpeaker].name ==
-                  "KHUSHBOO PATANI"
-                    ? "text-4xl"
-                    : "text-5xl"
-                } lg:text-7xl font-extrabold tracking-[0.5rem]`}
+                    "YASHWARDHAN SINGH" ||
+                  sections[activeSection].speakers[activeSpeaker].name ==
+                    "SHEKINAH MUKHIYA"
+                    ? "text-2xl tracking-[0.1rem] lg:tracking-[0.5rem]"
+                    : "text-5xl tracking-[0.1rem] md:tracking-[0.5rem]"
+                } ${
+                  sections[activeSection].speakers[activeSpeaker].name ==
+                  "YASHWARDHAN SINGH"
+                    ? "lg:text-4xl"
+                    : "lg:text-7xl"
+                } font-extrabold `}
               >
                 {
                   sections[activeSection].speakers[activeSpeaker].name.split(
@@ -456,12 +467,25 @@ const Speakers = () => {
                 }
               </div>
               <div
+                // className={`text-white   ${
+                //   sections[activeSection].speakers[activeSpeaker].name ==
+                //   "KHUSHBOO PATANI"
+                //     ? "text-2xl"
+                //     : "text-3xl"
+                // } lg:text-5xl font-bold tracking-[0.5rem]`}
                 className={`text-white   ${
                   sections[activeSection].speakers[activeSpeaker].name ==
-                  "KHUSHBOO PATANI"
-                    ? "text-2xl"
-                    : "text-3xl"
-                } lg:text-5xl font-bold tracking-[0.5rem]`}
+                    "YASHWARDHAN SINGH" ||
+                  sections[activeSection].speakers[activeSpeaker].name ==
+                    "SHEKINAH MUKHIYA"
+                    ? "text-1xl tracking-[0.1rem] lg:tracking-[0.5rem]"
+                    : "text-3xl tracking-[0.1rem] md:tracking-[0.5rem]"
+                } ${
+                  sections[activeSection].speakers[activeSpeaker].name ==
+                  "YASHWARDHAN SINGH"
+                    ? "lg:text-3xl"
+                    : "lg:text-5xl"
+                } font-bold `}
               >
                 {sections[activeSection].speakers[activeSpeaker].name.split(
                   " "
@@ -469,7 +493,7 @@ const Speakers = () => {
               </div>
             </div>
             <div>
-              <div ref={speakerImageRef} className="z-10">
+              <div ref={speakerImageRef} className="z-10 ">
                 <img
                   src={
                     sections[activeSection].speakers[activeSpeaker].image ||
@@ -477,6 +501,7 @@ const Speakers = () => {
                   }
                   alt={sections[activeSection].speakers[activeSpeaker].name}
                   className="z-10 w-[240px] md:w-[600px]"
+                  // className="z-10 w-[240px] md:w-[100%]"
                 />
               </div>
             </div>

@@ -9,7 +9,7 @@ function TeamMemberCard({ name, role, image }) {
 
   const cardRef = useRef(null);
   const overlayRef = useRef(null);
-  const infoRef = useRef(null);
+  // const infoRef = useRef(null);
   const imageRef = useRef(null);
   const linkedInRef = useRef(null);
 
@@ -43,7 +43,7 @@ function TeamMemberCard({ name, role, image }) {
     if (cardRef.current) {
       gsap.to(cardRef.current, {
         y: -6,
-        duration: 0.3,
+        duration: 0.1,
         ease: "power1.out",
       });
     }
@@ -66,8 +66,8 @@ function TeamMemberCard({ name, role, image }) {
 
     if (imageRef.current) {
       gsap.to(imageRef.current, {
-        scale: 1.05,
-        duration: 0.5,
+        scale: 1,
+        duration: 0.2,
       });
     }
   };
@@ -110,9 +110,9 @@ function TeamMemberCard({ name, role, image }) {
       ref={cardRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="relative group mx-auto w-[20rem] sm:w-[19rem] mb-10 hover:mb-3.5 transition-all duration-300 ease-in-out overflow-hidden rounded-sm bg-black self-center"
+      className="relative group mx-auto w-[25rem] sm:w-[21rem] mb-10 hover:mb-3.5 transition-all duration-300 ease-in-out overflow-hidden rounded-sm bg-black self-center"
     >
-      <div className="aspect-[3/4] relative">
+      <div className="aspect-square relative">
         <div
           ref={overlayRef}
           className="absolute inset-0 bg-[#eb0028] z-1 flex justify-center items-center text-3xl"
@@ -136,20 +136,21 @@ function TeamMemberCard({ name, role, image }) {
             ref={imageRef}
             src={image || "/placeholder.svg"}
             alt={name}
-            className="w-full h-full object-cover object-center bg-black"
+            className="w-full h-full object-cover object-center bg-white"
           />
         </div>
       </div>
 
       <div
-        ref={infoRef}
-        className={`absolute bottom-0 left-0 right-0 p-2 z-20 border-1 w-[90%] mx-auto mb-2 rounded-sm ${
-          display ? "visible" : "invisible"
-        }`}
-        style={{ background: "rgba(215, 0, 0, 0.17)" }}
+        // ref={infoRef}
+        // className={`absolute bottom-0 left-0 right-0 p-2 z-20 border-1 w-[90%] mx-auto mb-2 rounded-sm ${
+        //   display ? "visible" : "invisible"
+        // }`}
+        // style={{ background: "rgba(215, 0, 0, 0.17)" }}
+        className="py-1.5"
       >
-        <h3 className="font-bold text-white">{name}</h3>
-        <p className="text-sm font-semibold" style={{ color: "#B6B6B6" }}>
+        {/* <h3 className="font-bold text-white">{name}</h3> */}
+        <p class="text-[#AF2424] text-center font-inter text-2xl font-black uppercase">
           {role}
         </p>
       </div>
