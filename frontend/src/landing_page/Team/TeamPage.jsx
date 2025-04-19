@@ -8,7 +8,7 @@ import Ram from "/MemberImages/Ram.webp";
 // import Saksham from "/MemberImages/Saksham.webp";
 import Sameer from "/MemberImages/Sameer.webp";
 import Shaurya from "/MemberImages/Shaurya.webp";
-import Saumya from "/MemberImages/saumya.webp";
+import Saumya from "/MemberImages/Saumya.webp";
 import V_Anuj from "/MemberImages/V_Anuj.webp";
 import Vidish from "/MemberImages/vidish.webp";
 import Yashasvi from "/MemberImages/Yashasvi.webp";
