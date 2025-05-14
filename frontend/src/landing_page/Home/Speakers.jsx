@@ -440,7 +440,7 @@ const Speakers = () => {
           ))}
         </div>
         <div>
-          <div className="flex flex-col-reverse items-center lg:flex-row gap-10 md:gap-10 md:justify-center w-full text-xl md:h-[25rem] ">
+          <div className="flex flex-col-reverse items-center lg:flex-row gap-10 lg:gap-10 md:justify-center w-full text-xl lg:h-[25rem] ">
             <div
               className="flex flex-col pb-5 md:pb-0 justify-center w-full  items-center md:items-end md:pl-12"
               ref={speakerNameRef}

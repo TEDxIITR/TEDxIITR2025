@@ -116,7 +116,7 @@ export default function Hero() {
 
   return (
     <>
-      <main className="bg-[#0e0e0e] lg:min-h-screen text-white overflow-hidden lg:pl-10 lg:pr-10">
+      <main className="bg-[#0e0e0e] lg:min-h-screen text-white overflow-hidden lg:pl-10 lg:px-10">
         <section
           ref={themeRef}
           className="container mx-auto px-4 pt-20 relative"
@@ -135,7 +135,7 @@ export default function Hero() {
             Theme
           </h1>
           {/* grid md:grid-cols-2 gap-8 items-center */}
-          <div className="w-full flex flex-col md:flex-row md:justify-between md:items-center gap-20">
+          <div className="w-full flex flex-col lg:flex-row md:justify-between md:items-center gap-20">
             <div className="theme-content max-w-2xl">
               <p className="text-md md:text-base leading-relaxed">
                 The theme “Tapestry of Time” weaves together the threads of
