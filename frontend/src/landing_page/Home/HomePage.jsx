@@ -8,6 +8,8 @@ import { useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import EventsLinePage from "./EventsLinePage";
+import CountDown from "./CountDown";
+import ThemeSection from "./Theme";
 gsap.registerPlugin(ScrollTrigger);
 
 const HomePage = () => {
@@ -27,7 +29,7 @@ const HomePage = () => {
         y: 0,
         duration: 4,
         // scale: 1,
-      }
+      },
     );
   }, []);
 
@@ -36,6 +38,9 @@ const HomePage = () => {
       {/* <Navbar /> */}
       <section id="Tapestry-section">
         <TapestryPage />
+      </section>
+      <section id="Theme-section">
+        <ThemeSection />
       </section>
       <section id="about-section" ref={heroRef}>
         <Hero />
@@ -51,6 +56,9 @@ const HomePage = () => {
       </section>
       <section id="pastEvents-section">
         <PastEventsPage />
+      </section>
+      <section id="countdown-section">
+        <CountDown />
       </section>
     </div>
   );
