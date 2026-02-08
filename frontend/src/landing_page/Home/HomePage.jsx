@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import EventsLinePage from "./EventsLinePage";
 import CountDown from "./CountDown";
-import ThemeSection from "./Theme";
+// import ThemeSection from "./Theme";
 gsap.registerPlugin(ScrollTrigger);
 
 const HomePage = () => {
@@ -39,9 +39,9 @@ const HomePage = () => {
       <section id="Tapestry-section">
         <TapestryPage />
       </section>
-      <section id="Theme-section">
-        <ThemeSection />
-      </section>
+      {/* <section id="Theme-section"> */}
+      {/* <ThemeSection /> */}
+      {/* </section> */}
       <section id="about-section" ref={heroRef}>
         <Hero />
       </section>
