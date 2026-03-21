@@ -17,8 +17,6 @@ const events = [
   { id: 14, date: "TEDxIITRoorkee 2026", color: "white", isCurrent: true },
 ];
 
-const TED_RED = "#E62B1E";
-
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
@@ -47,31 +45,6 @@ const styles = `
     margin-bottom: 4.5rem;
     position: relative;
     z-index: 2;
-  }
-
-  .tl-header-eyebrow {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.32em;
-    text-transform: uppercase;
-    color: var(--ted-red);
-    margin-bottom: 0.75rem;
-  }
-
-  .tl-header-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.2rem, 5vw, 3.6rem);
-    font-weight: 300;
-    letter-spacing: 0.04em;
-    color: #fff;
-    line-height: 1.1;
-    margin: 0;
-  }
-
-  .tl-header-title em {
-    font-style: italic;
-    color: var(--ted-red);
   }
 
   .tl-header-line {
@@ -220,9 +193,10 @@ const styles = `
   .tl-connector.right { left: 100%; }
   .tl-connector.red   { background: rgba(230,43,30,0.35); }
 
-  /* card cell */
-  .tl-cell-left  { display: flex; justify-content: flex-end; padding-right: 0; }
-  .tl-cell-right { display: flex; justify-content: flex-start; padding-left: 0; }
+  /* card cells */
+  .tl-cell-left  { display: flex; justify-content: flex-end; }
+  .tl-cell-right { display: flex; justify-content: flex-start; }
+  .tl-cell-empty {}
 
   /* card */
   .tl-card {
@@ -242,6 +216,7 @@ const styles = `
   .tl-card:hover {
     transform: translateY(-2px);
     background: rgba(255,255,255,0.055);
+    cursor: pointer;
   }
 
   .tl-card.red {
@@ -300,52 +275,7 @@ const styles = `
     97%            { opacity: 0.9; }
   }
 
-  /* ── EMPTY SIDE ── */
-  .tl-cell-empty { /* intentionally empty side */ }
-
-  /* ── RESPONSIVE: collapse to single column ── */
-  @media (max-width: 600px) {
-    .tl-track::before {
-      left: 20px;
-      transform: none;
-    }
-
-    .tl-row {
-      grid-template-columns: 48px 1fr;
-      grid-template-rows: auto;
-    }
-
-    /* hide the "other side" empty cell */
-    .tl-row .tl-cell-empty,
-    .tl-row .tl-cell-left:not(.mobile-right) {
-      display: none;
-    }
-
-    .tl-node-cell {
-      grid-column: 1;
-      grid-row: 1;
-    }
-
-    .tl-cell-right {
-      grid-column: 2;
-      grid-row: 1;
-      padding-left: 0.5rem;
-    }
-
-    .tl-connector.left  { display: none; }
-    .tl-connector.right { left: 0; width: 14px; }
-
-    .tl-node-cell {
-      justify-content: flex-start;
-      padding-left: 13px;
-    }
-
-    .tl-card { max-width: 100%; width: 100%; }
-
-    .tl-legend { gap: 1.25rem; }
-  }
-
-  /* glow line fill as user scrolls — purely decorative overlay */
+  /* glow line fill */
   .tl-spine-fill {
     position: absolute;
     top: 0;
@@ -357,8 +287,68 @@ const styles = `
     transition: height 0.1s linear;
   }
 
+  /* ─────────────────────────────────────────────
+     MOBILE: collapse to left-anchored single column
+     Every row → [node 44px] [card 1fr]
+     Both .tl-cell-left AND .tl-cell-right land in
+     grid column 2, after the node.
+  ───────────────────────────────────────────── */
   @media (max-width: 600px) {
-    .tl-spine-fill { left: 20px; transform: none; }
+
+    /* Shift spine and fill to the left edge */
+    .tl-track::before {
+      left: 20px;
+      transform: none;
+    }
+    .tl-spine-fill {
+      left: 20px;
+      transform: none;
+    }
+
+    /* 2-column grid for every row */
+    .tl-row {
+      grid-template-columns: 44px 1fr;
+    }
+
+    /* Node always col 1, left-aligned */
+    .tl-node-cell {
+      grid-column: 1;
+      grid-row: 1;
+      justify-content: flex-start;
+      padding-left: 13px;
+    }
+
+    /* Card from LEFT side: reposition to col 2, align left */
+    .tl-cell-left {
+      grid-column: 2;
+      grid-row: 1;
+      justify-content: flex-start;
+      padding-left: 0.5rem;
+    }
+
+    /* Card from RIGHT side: already would land in col 3
+       on a 3-col grid; pin it to col 2 explicitly */
+    .tl-cell-right {
+      grid-column: 2;
+      grid-row: 1;
+      justify-content: flex-start;
+      padding-left: 0.5rem;
+    }
+
+    /* Hide blank spacers */
+    .tl-cell-empty {
+      display: none;
+    }
+
+    /* On mobile, left-side connectors are hidden;
+       right-side connectors point away from node toward card */
+    .tl-connector.left  { display: none; }
+    .tl-connector.right { left: 100%; width: 14px; }
+
+    /* Cards fill available width */
+    .tl-card { max-width: 100%; width: 100%; }
+
+    .tl-legend { gap: 1.25rem; }
   }
 `;
 
@@ -370,7 +360,6 @@ const EventsLine = () => {
   const fillRef = useRef(null);
   const trackRef = useRef(null);
 
-  // Intersection Observer for reveal
   useEffect(() => {
     const obs = new IntersectionObserver(
       (entries) => {
@@ -386,7 +375,6 @@ const EventsLine = () => {
     return () => obs.disconnect();
   }, []);
 
-  // Scroll-driven spine fill
   useEffect(() => {
     const onScroll = () => {
       const track = trackRef.current;
@@ -409,11 +397,10 @@ const EventsLine = () => {
     <div className="tl-root">
       <style>{styles}</style>
 
-      {/* Header */}
+      {/* Header — your version preserved exactly */}
       <div className="tl-header">
-        {/* <p className="tl-header-eyebrow">A decade of ideas worth spreading</p> */}
-        <h1 className="text-center text-7xl font-bold">
-          OUR <em>Journey</em> THROUGH TIME
+        <h1 className="text-center text-7xl font-bold text-[#ffffff]">
+          OUR <em className="text-red-500">Journey</em> THROUGH TIME
         </h1>
         <div className="tl-header-line" />
       </div>
@@ -426,23 +413,22 @@ const EventsLine = () => {
         </div>
         <div className="tl-legend-item">
           <span className="tl-legend-dot white" />
-          Upcoming / not yet held
+          Not Held
         </div>
       </div>
 
       {/* Timeline track */}
       <div className="tl-track" ref={trackRef}>
-        {/* animated spine fill */}
         <div className="tl-spine-fill" ref={fillRef} style={{ height: 0 }} />
 
         {events.map((ev, i) => {
-          const leftSide = i % 2 === 0; // even → card on left, odd → card on right
+          const leftSide = i % 2 === 0;
           const red = isRed(ev.color);
           const curr = isCurrent(ev);
           const nodeClass = `tl-node${red || curr ? ` ${curr ? "current" : "red"}` : ""}`;
           const labelClass = `tl-label ${curr ? "current" : red ? "red" : "white"}`;
           const cardClass = `tl-card${curr ? " current" : red ? " red" : ""}`;
-          const connClass = `tl-connector ${red || curr ? " red" : ""}`;
+          const connClass = `tl-connector${red || curr ? " red" : ""}`;
 
           return (
             <div
