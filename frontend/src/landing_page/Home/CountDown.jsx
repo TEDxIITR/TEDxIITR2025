@@ -33,9 +33,9 @@ function FlipUnit({ value, label }) {
         {" "}
         <div className="relative w-full h-full flex flex-col rounded-lg overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
           {" "}
-          <div className="flex-grow bg-neutral-800 flex items-center justify-center relative border-b border-black/30">
+          <div className="flex-grow bg-gradient-to-b from-neutral-800 from-54% to-neutral-700 to-54% flex items-center justify-center relative border-b border-black/30">
             {" "}
-            <div className="font-bold text-white leading-none tracking-tighter text-4xl md:text-8xl lg:text-9xl xl:text-[10rem]">
+            <div className="font-bold text-white leading-none tracking-tighter text-4xl md:text-8xl lg:text-9xl xl:text-[10rem] z-10">
               {" "}
               {current}{" "}
             </div>
@@ -48,7 +48,7 @@ function FlipUnit({ value, label }) {
                   exit={{ rotateX: -180, opacity: 0 }}
                   transition={{ duration: 0.6, ease: "easeInOut" }}
                   style={{ transformOrigin: "bottom" }}
-                  className="absolute inset-0 bg-neutral-800 flex items-center justify-center [backface-visibility:hidden] z-20 origin-bottom"
+                  className="absolute inset-0 bg-gradient-to-b from-neutral-800 from-50% to-neutral-700 to-50% flex items-center justify-center [backface-visibility:hidden] z-20 origin-bottom"
                 >
                   <div
                     className="font-bold text-white leading-none tracking-tighter
@@ -62,9 +62,11 @@ function FlipUnit({ value, label }) {
                 </motion.div>
               )}
             </AnimatePresence>
-            <div className="absolute top-1/2 left-0 -translate-y-1/2 w-1 h-2 md:w-1.5 md:h-4 bg-neutral-900 rounded-r-sm z-30 opacity-80"></div>
-            <div className="absolute top-1/2 right-0 -translate-y-1/2 w-1 h-2 md:w-1.5 md:h-4 bg-neutral-900 rounded-l-sm z-30 opacity-80"></div>
-            <div className="absolute top-[8.9rem] left-0 w-full h-px bg-black/40 z-10 shadow-[0_1px_0_rgba(255,255,255,0.05)]"></div>
+            {/* Side Hinges */}
+            <div className="absolute top-7/13 left-0 -translate-y-1/2 w-1 h-2 md:w-1.5 md:h-4 bg-neutral-900 bg-white rounded-r-sm z-30 opacity-80"></div>
+            <div className="absolute top-7/13 right-0 -translate-y-1/2 w-1 h-2 md:w-1.5 md:h-4 bg-neutral-900  bg-white rounded-l-sm z-30 opacity-80"></div>
+            {/* Centered Partition Line */}
+            <div className="absolute top-7/13 left-0 -translate-y-1/2 w-full h-[2px] bg-black/70 z-20 shadow-[0_1px_0_rgba(255,255,255,0.1)]"></div>
           </div>
           <div
             className="bg-red-600 flex items-center justify-center z-20 border-t border-red-700
@@ -90,7 +92,6 @@ function FlipUnit({ value, label }) {
 }
 
 export default function CountDown() {
-  // const defaultTarget =
   const defaultTarget = new Date("2026-04-05T00:00:00+05:30").getTime();
   const [target] = useState(defaultTarget);
   const [time, setTime] = useState(() => computeTimeParts(target));
@@ -105,7 +106,8 @@ export default function CountDown() {
   return (
     <div className="min-h-screen bg-black flex flex-col justify-center items-center overflow-hidden">
       {" "}
-      <div className="w-full px-4 md:px-12 lg:px-16 xl:px-24 max-w-[1920px]">
+      {/* Increased mobile padding (px-8) */}
+      <div className="w-full px-8 sm:px-12 md:px-12 lg:px-16 xl:px-24 max-w-[1920px]">
         {" "}
         <div className="mb-6 sm:mb-8 md:mb-16 lg:mb-20 text-center xl:text-left px-2 sm:px-4">
           <h2
@@ -116,7 +118,7 @@ md:text-2xl
 lg:text-3xl
 xl:text-4xl"
           >
-            TEDx IITRoorkee <span className="text-red-600">2026</span>
+            TEDxIITRoorkee <span className="text-red-600">2026</span>
           </h2>
 
           <h1
@@ -140,9 +142,11 @@ mt-1 sm:mt-2 md:mt-4"
       "
           ></div>
 
+          {/* Reduced mobile gap to gap-2 to accommodate the wider padding without overflowing */}
           <div
             className="flex flex-row flex-nowrap items-center justify-center 
-        gap-3 
+        gap-2
+        sm:gap-4
         md:gap-8 
         lg:gap-12 
         xl:gap-16
