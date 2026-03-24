@@ -3,8 +3,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import ThemeIITRoorkee from "../../../public/ThemeIITRoorkee.jpg";
 // import ThemeX from "../../../public/ThemeX.png";
-import ThemeIITRoorkee from "/ThemeIITRoorkee.jpg";
-import ThemeX from "/ThemeX.png";
+// import ThemeIITRoorkee from "/ThemeIITRoorkee.jpg";
+// import ThemeX from "/ThemeX.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,11 +34,12 @@ const TextCard = ({ title, text }) => {
   );
 };
 
-const ImageCard = ({ src, alt }) => {
+const ImageCard = ({ alt }) => {
   return (
     <div className="h-full w-full rounded-[2rem] overflow-hidden relative shadow-2xl bg-neutral-900">
       <img
-        src={src}
+        // src={src}
+        src="/ThemeIITRoorkee.jpg"
         alt={alt}
         className="w-full h-full object-cover grayscale opacity-80 hover:scale-105 hover:grayscale-0 transition-all duration-700 ease-out"
       />
@@ -51,7 +52,7 @@ const LogoCard = () => {
   return (
     <div className="h-full w-full rounded-[2rem] overflow-hidden relative shadow-2xl bg-neutral-900 flex items-center justify-center">
       <img
-        src={ThemeX}
+        src="/ThemeX.png"
         alt="TEDxIITRoorkee Logo"
         className="w-full h-full object-cover opacity-90 hover:scale-105 transition-all duration-700 ease-out"
       />
@@ -137,7 +138,7 @@ export default function ThemeSection() {
           </div>
 
           <div className="gsap-card will-change-transform lg:col-span-1 min-h-[320px] lg:h-[320px]">
-            <ImageCard src={ThemeIITRoorkee} alt="IIT Roorkee Main Building" />
+            <ImageCard alt="IIT Roorkee Main Building" />
           </div>
 
           <div className="gsap-card will-change-transform lg:col-span-1 min-h-[320px] lg:h-[320px]">
