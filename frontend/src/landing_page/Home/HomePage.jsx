@@ -10,7 +10,7 @@ import gsap from "gsap";
 import EventsLinePage from "./EventsLinePage";
 import CountDown from "./CountDown";
 import ThemeSection from "./Theme";
-import TicketsAndMerch2026Home from "./TicketsAndMerch2026Home";
+// import TicketsAndMerch2026Home from "./TicketsAndMerch2026Home";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,9 +56,9 @@ const HomePage = () => {
       <section id="sponsers-section">
         <SponsersPage />
       </section>
-      <section id="tickets-merch-section">
+      {/* <section id="tickets-merch-section">
         <TicketsAndMerch2026Home />
-      </section>
+      </section> */}
       <section id="pastEvents-section">
         <PastEventsPage />
       </section>
