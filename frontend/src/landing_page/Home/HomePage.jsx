@@ -43,9 +43,9 @@ const HomePage = () => {
       <section id="Theme-section">
         <ThemeSection />
       </section>
-      {/* <section id="about-section" ref={heroRef}>
+      <section id="about-section" ref={heroRef}>
         <Hero />
-      </section> */}
+      </section>
       <section>
         <EventsLinePage />
       </section>
@@ -55,12 +55,12 @@ const HomePage = () => {
       <section id="sponsers-section">
         <SponsersPage />
       </section>
-      {/* <section id="tickets-merch-section">
+      <section id="tickets-merch-section">
         <TicketsAndMerch2026 />
-      </section> */}
-      {/* <section id="pastEvents-section">
+      </section>
+      <section id="pastEvents-section">
         <PastEventsPage />
-      </section> */}
+      </section>
       <section id="countdown-section">
         <CountDown />
       </section>
