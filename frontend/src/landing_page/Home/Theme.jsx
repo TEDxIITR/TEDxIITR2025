@@ -1,10 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import ThemeIITRoorkee from "../../../public/ThemeIITRoorkee.jpg";
-// import ThemeX from "../../../public/ThemeX.png";
-// import ThemeIITRoorkee from "/ThemeIITRoorkee.jpg";
-// import ThemeX from "/ThemeX.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
