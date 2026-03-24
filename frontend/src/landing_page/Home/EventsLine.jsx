@@ -399,8 +399,8 @@ const EventsLine = () => {
 
       {/* Header — your version preserved exactly */}
       <div className="tl-header">
-        <h1 className="text-center text-7xl font-bold text-[#ffffff]">
-          OUR <em className="text-red-500">Journey</em> THROUGH TIME
+        <h1 className="text-center text-3xl sm:text-5xl md:text-7xl font-bold text-[#ffffff]">
+          OUR <span className="text-red-500">JOURNEY</span> THROUGH TIME
         </h1>
         <div className="tl-header-line" />
       </div>

@@ -191,13 +191,16 @@ const Speakers = () => {
       `}</style>
 
       {/* Header Section */}
-      <div
-        ref={headerRef}
-        className="w-full flex justify-center mb-10 lg:mb-16"
-      >
-        <h1 className="text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-center font-passion font-extrabold leading-normal uppercase">
-          Meet Our <span className="text-[#E62B1E]">Speakers</span>
-        </h1>
+      <div ref={headerRef} className="w-full flex justify-center ">
+        <div>
+          <h1
+            style={{ fontFamily: "'Rajdhani', sans-serif" }}
+            className="text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-center font-passion font-extrabold leading-normal uppercase"
+          >
+            Meet Our <span className="text-[#E62B1E]">Speakers</span>
+          </h1>
+          <div className="tl-header-line" />
+        </div>
       </div>
 
       <div className="flex flex-col lg:flex-row max-w-7xl mx-auto gap-8 lg:gap-16 lg:items-center">
