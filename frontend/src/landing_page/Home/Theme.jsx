@@ -3,8 +3,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import ThemeIITRoorkee from "../../../public/ThemeIITRoorkee.jpg";
 // import ThemeX from "../../../public/ThemeX.png";
-import ThemeIITRoorkee from "../../assets/ThemeIITRoorkee.jpg";
-import ThemeX from "../../assets/ThemeX.png";
+import ThemeIITRoorkee from "/ThemeIITRoorkee.jpg";
+import ThemeX from "/ThemeX.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
