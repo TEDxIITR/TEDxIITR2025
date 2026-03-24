@@ -9,7 +9,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import EventsLinePage from "./EventsLinePage";
 import CountDown from "./CountDown";
-// import ThemeSection from "./Theme";
+import ThemeSection from "./Theme";
+import TicketsAndMerch2026 from "./TicketsAndMerch2026Home";
 gsap.registerPlugin(ScrollTrigger);
 
 const HomePage = () => {
@@ -39,12 +40,12 @@ const HomePage = () => {
       <section id="Tapestry-section">
         <TapestryPage />
       </section>
-      {/* <section id="Theme-section"> */}
-      {/* <ThemeSection /> */}
-      {/* </section> */}
-      <section id="about-section" ref={heroRef}>
-        <Hero />
+      <section id="Theme-section">
+        <ThemeSection />
       </section>
+      {/* <section id="about-section" ref={heroRef}>
+        <Hero />
+      </section> */}
       <section>
         <EventsLinePage />
       </section>
@@ -54,9 +55,12 @@ const HomePage = () => {
       <section id="sponsers-section">
         <SponsersPage />
       </section>
-      <section id="pastEvents-section">
+      {/* <section id="tickets-merch-section">
+        <TicketsAndMerch2026 />
+      </section> */}
+      {/* <section id="pastEvents-section">
         <PastEventsPage />
-      </section>
+      </section> */}
       <section id="countdown-section">
         <CountDown />
       </section>
