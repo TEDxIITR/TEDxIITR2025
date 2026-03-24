@@ -151,7 +151,7 @@ const Speakers = () => {
   return (
     <div
       ref={mainRef}
-      className="w-full min-h-screen bg-black font-sans overflow-hidden py-16 px-6 lg:px-20"
+      className="w-full min-h-screen bg-black font-sans overflow-hidden py-10 lg:py-16 px-4 lg:px-20"
     >
       {/* Inline styles for shimmer keyframe animation */}
       <style>{`
@@ -191,23 +191,16 @@ const Speakers = () => {
       `}</style>
 
       {/* Header Section */}
-      <div ref={headerRef} className="w-full flex justify-center mb-16">
-        <h1
-          className="text-[#d9d9d9] text-7xl  md:text-7xl lg:text-8xl text-center mb-16  font-passion font-extrabold leading-normal"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(110, 110, 110, 0.46) 46.23%, rgba(212, 212, 212, 0.00) 90.52%)",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            fontWeight: "10rem",
-          }}
-        >
-          Meet Our Speakers
+      <div
+        ref={headerRef}
+        className="w-full flex justify-center mb-10 lg:mb-16"
+      >
+        <h1 className="text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-center font-passion font-extrabold leading-normal uppercase">
+          Meet Our <span className="text-[#E62B1E]">Speakers</span>
         </h1>
       </div>
 
-      <div className="flex flex-col lg:flex-row max-w-7xl mx-auto gap-10 lg:gap-16 lg:items-center">
+      <div className="flex flex-col lg:flex-row max-w-7xl mx-auto gap-8 lg:gap-16 lg:items-center">
         {/* Timeline Sidebar */}
         <div className="shrink-0 lg:w-20 flex lg:flex-col items-center justify-center overflow-x-auto lg:overflow-visible py-3 lg:py-0">
           {/* DESKTOP — vertical stack, size+opacity fade by distance */}
@@ -256,7 +249,7 @@ const Speakers = () => {
           </div>
 
           {/* MOBILE — horizontal row, same distance-based fade */}
-          <div className="flex lg:hidden items-center overflow-x-auto pb-3 w-full border-b border-white/10">
+          <div className="flex lg:hidden items-center overflow-x-auto pb-3 w-full border-b border-white/10 no-scrollbar">
             {sections.map((section, index) => {
               const dist = Math.abs(index - activeSection);
               const opacs = [1, 0.65, 0.38, 0.22, 0.15];
@@ -299,39 +292,37 @@ const Speakers = () => {
           </div>
         </div>
 
-        {/* Speakers Grid */}
-        <div className="flex-1" ref={gridRef}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Speakers Grid - Updated to always show 2 columns on mobile */}
+        <div className="flex-1 w-full" ref={gridRef}>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
             {sections[activeSection].speakers.map((speaker) => (
               <div
                 key={speaker.id}
-                className="speaker-card relative group w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-xl bg-gradient-to-b from-[#B21919] via-[#B21919] to-[#4C0B0B] cursor-pointer"
+                className="speaker-card relative group w-full aspect-[3/4] rounded-xl lg:rounded-2xl overflow-hidden shadow-xl bg-gradient-to-b from-[#B21919] via-[#B21919] to-[#4C0B0B] cursor-pointer"
                 style={{
                   transform: "translateY(0) scale(1)",
                   transition:
                     "transform 0.4s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.4s ease",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform =
-                    "translateY(-10px) scale(1.02)";
-                  e.currentTarget.style.boxShadow =
-                    "0 0 0 1.5px #E62B1E, 0 20px 60px rgba(230,43,30,0.55), 0 8px 24px rgba(0,0,0,0.6)";
+                  if (window.innerWidth >= 1024) {
+                    e.currentTarget.style.transform =
+                      "translateY(-10px) scale(1.02)";
+                    e.currentTarget.style.boxShadow =
+                      "0 0 0 1.5px #E62B1E, 0 20px 60px rgba(230,43,30,0.55), 0 8px 24px rgba(0,0,0,0.6)";
+                  }
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "translateY(0) scale(1)";
-                  e.currentTarget.style.boxShadow =
-                    "0 10px 30px rgba(0,0,0,0.4)";
+                  if (window.innerWidth >= 1024) {
+                    e.currentTarget.style.transform = "translateY(0) scale(1)";
+                    e.currentTarget.style.boxShadow =
+                      "0 10px 30px rgba(0,0,0,0.4)";
+                  }
                 }}
               >
-                {/* ── Red sweep bar along the top ── */}
-                <div
-                // className="card-topbar absolute top-0 left-0 h-[3px] bg-[#E62B1E] z-40"
-                // style={{ width: "0%" }}
-                />
-
                 {/* ── Watermark X ── */}
-                <div className="absolute top-4 left-4 z-20 transition-all duration-400 group-hover:opacity-0 group-hover:scale-75">
-                  <span className="text-white/80 font-serif text-3xl font-black italic select-none">
+                <div className="absolute top-2 left-2 sm:top-4 sm:left-4 z-20 transition-all duration-400 lg:group-hover:opacity-0 lg:group-hover:scale-75">
+                  <span className="text-white/80 font-serif text-xl sm:text-3xl font-black italic select-none">
                     X
                   </span>
                 </div>
@@ -349,22 +340,26 @@ const Speakers = () => {
                       "filter 0.55s ease, opacity 0.55s ease, transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94)",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.filter =
-                      "grayscale(0%) brightness(1)";
-                    e.currentTarget.style.opacity = "1";
-                    e.currentTarget.style.transform = "scale(1.07)";
+                    if (window.innerWidth >= 1024) {
+                      e.currentTarget.style.filter =
+                        "grayscale(0%) brightness(1)";
+                      e.currentTarget.style.opacity = "1";
+                      e.currentTarget.style.transform = "scale(1.07)";
+                    }
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.filter =
-                      "grayscale(100%) brightness(0.85)";
-                    e.currentTarget.style.opacity = "0.92";
-                    e.currentTarget.style.transform = "scale(1)";
+                    if (window.innerWidth >= 1024) {
+                      e.currentTarget.style.filter =
+                        "grayscale(100%) brightness(0.85)";
+                      e.currentTarget.style.opacity = "0.92";
+                      e.currentTarget.style.transform = "scale(1)";
+                    }
                   }}
                 />
 
                 {/* ── Diagonal shimmer sweep ── */}
                 <div
-                  className="card-shimmer absolute inset-0 z-30 pointer-events-none"
+                  className="card-shimmer absolute inset-0 z-30 pointer-events-none hidden lg:block"
                   style={{
                     background:
                       "linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.18) 50%, transparent 60%)",
@@ -376,7 +371,7 @@ const Speakers = () => {
 
                 {/* ── Red vignette tint on hover ── */}
                 <div
-                  className="absolute inset-0 z-15 pointer-events-none"
+                  className="absolute inset-0 z-15 pointer-events-none hidden lg:block"
                   style={{
                     background:
                       "radial-gradient(ellipse at 50% 100%, rgba(230,43,30,0.22) 0%, transparent 70%)",
@@ -389,42 +384,44 @@ const Speakers = () => {
 
                 {/* ── Bottom text overlay ── */}
                 <div
-                  className="absolute bottom-0 left-0 w-full z-20 flex flex-col justify-end"
+                  className="absolute bottom-0 left-0 w-full z-20 flex flex-col justify-end p-3 pt-12 sm:p-6 sm:pt-20"
                   style={{
-                    padding: "1.5rem",
-                    paddingTop: "5rem",
                     background:
-                      "linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 50%, transparent 100%)",
-                    height: "100%",
+                      "linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 55%, transparent 100%)",
                     transition: "padding-bottom 0.35s ease",
                   }}
                 >
                   {/* Name */}
                   <h3
-                    className="text-white text-xl lg:text-2xl font-bold leading-tight"
+                    className="text-white text-[15px] sm:text-xl lg:text-2xl font-bold leading-tight"
                     style={{
                       transform: "translateY(0)",
                       transition:
                         "transform 0.35s cubic-bezier(0.34,1.2,0.64,1)",
                     }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.transform = "translateY(-3px)")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.transform = "translateY(0)")
-                    }
+                    onMouseEnter={(e) => {
+                      if (window.innerWidth >= 1024)
+                        e.currentTarget.style.transform = "translateY(-3px)";
+                    }}
+                    onMouseLeave={(e) => {
+                      if (window.innerWidth >= 1024)
+                        e.currentTarget.style.transform = "translateY(0)";
+                    }}
                   >
                     {speaker.name}
                   </h3>
 
                   {/* Animated red underline */}
                   <div
-                    className="card-underline h-[2px] bg-[#E62B1E] mt-2 mb-1 rounded-full"
+                    className="card-underline h-[2px] bg-[#E62B1E] mt-1 sm:mt-2 mb-1 rounded-full hidden lg:block"
                     style={{ width: "0%", opacity: 0 }}
                   />
 
+                  {/* Mobile red line equivalent (static for small screens) */}
+                  <div className="h-[2px] w-1/3 bg-[#E62B1E] mt-1 sm:mt-2 mb-1 rounded-full lg:hidden opacity-80" />
+
                   {/* TEDx label */}
-                  <p className="text-gray-300 text-sm font-medium tracking-widest transition-colors duration-300 group-hover:text-[#E62B1E]">
+                  <p className="text-gray-300 text-[9px] sm:text-xs lg:text-sm font-medium tracking-widest transition-colors duration-300 lg:group-hover:text-[#E62B1E] truncate">
                     TEDxIITRoorkee
                   </p>
                 </div>
