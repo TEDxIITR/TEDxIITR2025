@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Hero from "./Hero";
+// import Hero from "./Hero";
 import SpearkersPage from "./SpearkersPage";
 import TapestryPage from "./TapestryPage";
 import SponsersPage from "./SponsersPage";
@@ -44,9 +44,9 @@ const HomePage = () => {
       <section id="Theme-section">
         <ThemeSection />
       </section>
-      <section id="about-section" ref={heroRef}>
+      {/* <section id="about-section" ref={heroRef}>
         <Hero />
-      </section>
+      </section> */}
       <section>
         <EventsLinePage />
       </section>
