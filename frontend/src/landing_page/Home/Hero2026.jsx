@@ -54,7 +54,7 @@ const Hero2026 = () => {
         ref={imageRef}
         className="w-full h-full bg-no-repeat"
         style={{
-          backgroundImage: `url('/HeroPlaceholder2026.png')`,
+          backgroundImage: `url('/HeroPlaceholder2026.webp')`,
           backgroundSize: "100% 100%",
           backgroundPosition: "center",
         }}
