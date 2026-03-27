@@ -4,6 +4,11 @@ import { useNavigate } from "react-router-dom";
 export default function TicketsAndMerch2026Home() {
   const [isLoaded, setIsLoaded] = useState(false);
   const route = useNavigate();
+
+  // Quick price configs to match your other component
+  const PRICE_REGULAR = 699;
+  const PRICE_COUPON = 599;
+
   useEffect(() => {
     setIsLoaded(true);
   }, []);
@@ -121,7 +126,7 @@ export default function TicketsAndMerch2026Home() {
               }}
             >
               <span className="text-yellow-300 font-black text-sm md:text-base tracking-wider stub-text-vertical">
-                Rs. 700
+                Rs. {PRICE_REGULAR}/-
               </span>
               <div className="flex flex-row md:flex-col items-center gap-4 md:gap-1 stub-text-vertical">
                 <span className="text-white/65 text-[10px] font-semibold tracking-[0.22em] uppercase">
@@ -153,19 +158,37 @@ export default function TicketsAndMerch2026Home() {
               {/* Two-panel row */}
               <div className="flex flex-col md:flex-row">
                 {/* Left: Price panel */}
-                <div className="flex flex-col self-center justify-center px-8 py-8 md:py-10 border-b md:border-b-0 md:border-r border-dashed border-white/15 md:w-[42%]">
-                  <p className="text-gray-400 text-[11px] font-bold tracking-[0.28em] uppercase mb-4">
+                <div className="flex flex-col self-center justify-center items-center md:items-start px-8 py-8 md:py-10 border-b md:border-b-0 md:border-r border-dashed border-white/15 md:w-[42%]">
+                  <p className="text-gray-400 text-[11px] font-bold tracking-[0.28em] uppercase mb-4 text-center md:text-left">
                     TICKET PRICE
                   </p>
                   <p
-                    className="text-white font-black leading-none"
+                    className="text-white font-black leading-none text-center md:text-left"
                     style={{ fontSize: "clamp(2.4rem,5.5vw,3.5rem)" }}
                   >
-                    ₹ 700/-
+                    ₹ {PRICE_REGULAR}/-
                   </p>
-                  <p className="text-gray-500 text-xs font-medium mt-3 tracking-wider">
+                  <p className="text-gray-500 text-xs font-medium mt-3 tracking-wider text-center md:text-left">
                     including all taxes
                   </p>
+
+                  {/* NEW: Dynamic Coupon Tag (Dark Theme Variant) */}
+                  <div className="mt-5 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-green-500/30 bg-green-500/10 text-green-400 text-[0.7rem] font-bold  tracking-widest shadow-sm">
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                      <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                    </svg>
+                    ₹ {PRICE_COUPON}/- with Coupon Code
+                  </div>
                 </div>
 
                 {/* Right: Event info panel */}
@@ -176,12 +199,18 @@ export default function TicketsAndMerch2026Home() {
                   <h3 className="text-white font-black uppercase leading-tight text-2xl md:text-3xl lg:text-4xl tracking-wide">
                     ZEPHYR OF CHANGE
                   </h3>
+
                   <button
                     onClick={() => route("/ticket")}
-                    className="mt-1 bg-gradient-to-r flex self-center cursor-pointer from-[#e60020] to-[#b0001a] hover:from-[#ff0030] hover:to-[#cc0020] text-white font-bold text-sm py-3 px-8 rounded-full shadow-[0_8px_24px_-8px_rgba(230,0,32,0.7)] transition-all duration-300 hover:-translate-y-0.5 active:scale-95 tracking-widest uppercase"
+                    className="mt-2 bg-gradient-to-r flex self-center md:self-start cursor-pointer from-[#e60020] to-[#b0001a] hover:from-[#ff0030] hover:to-[#cc0020] text-white font-bold text-sm py-3 px-8 rounded-full shadow-[0_8px_24px_-8px_rgba(230,0,32,0.7)] transition-all duration-300 hover:-translate-y-0.5 active:scale-95 tracking-widest uppercase"
                   >
                     Get Your Ticket
                   </button>
+
+                  {/* NEW: Coupon Helper Text */}
+                  <p className="text-[10px] md:text-[11px] text-gray-500 font-medium mt-2 uppercase tracking-wider text-center md:text-left">
+                    *Apply coupon code on the next step
+                  </p>
                 </div>
               </div>
 
