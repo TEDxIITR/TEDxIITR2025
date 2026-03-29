@@ -127,21 +127,19 @@ export default function ThemeSection() {
     >
       <div className="max-w-7xl w-full mx-auto">
         {/* Added grid-container class for desktop ScrollTrigger */}
-        <div className="grid-container grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 auto-rows-fr">
+        <div className="grid-container grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 auto-rows-auto lg:auto-rows-fr">
+          {" "}
           {/* Added will-change-transform for hardware acceleration */}
-          <div className="gsap-card will-change-transform lg:col-span-2 min-h-[320px] lg:h-[320px]">
+          <div className="gsap-card will-change-transform lg:col-span-2 h-[310px]  lg:h-[320px]">
             <TextCard title="TEDxIIT ROORKEE" text={text1} />
           </div>
-
-          <div className="gsap-card will-change-transform lg:col-span-1 min-h-[320px] lg:h-[320px]">
+          <div className="gsap-card will-change-transform lg:col-span-1 h-[200px] min-h-[200px] lg:h-[320px]">
             <ImageCard alt="IIT Roorkee Main Building" />
           </div>
-
-          <div className="gsap-card will-change-transform lg:col-span-1 min-h-[320px] lg:h-[320px]">
+          <div className="gsap-card will-change-transform hidden lg:block lg:col-span-1 min-h-[320px] lg:h-[320px]">
             <LogoCard />
           </div>
-
-          <div className="gsap-card will-change-transform lg:col-span-2 min-h-[320px] lg:h-[320px]">
+          <div className="gsap-card will-change-transform lg:col-span-2 h-[310px]  lg:h-[320px]">
             <TextCard title="ZEPHYR OF CHANGE" text={text2} />
           </div>
         </div>

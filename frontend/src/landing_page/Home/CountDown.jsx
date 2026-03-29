@@ -104,7 +104,7 @@ export default function CountDown() {
   }, [target]);
 
   return (
-    <div className="min-h-screen bg-black flex flex-col justify-center items-center overflow-hidden">
+    <div className="h-[20rem] lg:min-h-screen bg-black flex flex-col justify-center items-center overflow-hidden">
       {" "}
       {/* Increased mobile padding (px-8) */}
       <div className="w-full px-8 sm:px-12 md:px-12 lg:px-16 xl:px-24 max-w-[1920px]">

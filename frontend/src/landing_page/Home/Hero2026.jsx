@@ -133,7 +133,7 @@ const Hero2026 = () => {
   }, []);
 
   return (
-    <section className="w-full h-screen overflow-hidden bg-black relative">
+    <section className="w-full  h-[34rem] lg:h-screen overflow-hidden bg-black relative">
       {/* ── Background image with all cinematic animation ── */}
       <div
         ref={imageRef}
@@ -156,7 +156,8 @@ const Hero2026 = () => {
 
       {/* ── Foreground content ── */}
       <div
-        className="absolute inset-0 flex flex-col justify-center"
+        // i want to disable the top-margin after lg
+        className="absolute inset-0 flex flex-col top-[8rem] lg:top-0 lg:justify-center"
         style={{ padding: "0 5vw" }}
       >
         {/* Title — overflow hidden on each line acts as a reveal mask */}

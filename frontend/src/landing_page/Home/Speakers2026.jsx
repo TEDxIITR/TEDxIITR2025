@@ -44,6 +44,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Speakers = () => {
   const [activeSection, setActiveSection] = useState(0);
+  const [activeMobileCard, setActiveMobileCard] = useState(null);
   const mainRef = useRef(null);
   const gridRef = useRef(null);
   const headerRef = useRef(null);
@@ -142,10 +143,30 @@ const Speakers = () => {
     return () => ctx.revert();
   }, [activeSection]);
 
+  // Keep mobile "active card" scoped to small screens and current section
+  useEffect(() => {
+    setActiveMobileCard(null);
+  }, [activeSection]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setActiveMobileCard(null);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const handleSectionClick = (index) => {
     if (activeSection !== index) {
       setActiveSection(index);
     }
+  };
+
+  const handleMobileCardToggle = (cardKey) => {
+    if (window.innerWidth >= 1024) return;
+    setActiveMobileCard((prev) => (prev === cardKey ? null : cardKey));
   };
 
   return (
@@ -187,6 +208,32 @@ const Speakers = () => {
         .speaker-card .card-underline {
           width: 0%;
           opacity: 0;
+        }
+
+        @media (max-width: 1023px) {
+          .speaker-card.mobile-active {
+            transform: translateY(-8px) scale(1.02) !important;
+            box-shadow: 0 0 0 1.5px #E62B1E, 0 16px 45px rgba(230,43,30,0.45), 0 8px 24px rgba(0,0,0,0.6) !important;
+          }
+          .speaker-card.mobile-active .card-watermark {
+            opacity: 0;
+            transform: scale(0.75);
+          }
+          .speaker-card.mobile-active .card-image {
+            filter: grayscale(0%) brightness(1) !important;
+            opacity: 1 !important;
+            transform: scale(1.05) !important;
+          }
+          .speaker-card.mobile-active .card-mobile-vignette {
+            opacity: 1 !important;
+          }
+          .speaker-card.mobile-active .card-mobile-underline {
+            width: 100% !important;
+            opacity: 1 !important;
+          }
+          .speaker-card.mobile-active .card-label {
+            color: #E62B1E !important;
+          }
         }
       `}</style>
 
@@ -298,33 +345,37 @@ const Speakers = () => {
         {/* Speakers Grid - Updated to always show 2 columns on mobile */}
         <div className="flex-1 w-full" ref={gridRef}>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
-            {sections[activeSection].speakers.map((speaker) => (
-              <div
-                key={speaker.id}
-                className="speaker-card relative group w-full aspect-[3/4] rounded-xl lg:rounded-2xl overflow-hidden shadow-xl bg-gradient-to-b from-[#B21919] via-[#B21919] to-[#4C0B0B] cursor-pointer"
-                style={{
-                  transform: "translateY(0) scale(1)",
-                  transition:
-                    "transform 0.4s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.4s ease",
-                }}
-                onMouseEnter={(e) => {
-                  if (window.innerWidth >= 1024) {
-                    e.currentTarget.style.transform =
-                      "translateY(-10px) scale(1.02)";
-                    e.currentTarget.style.boxShadow =
-                      "0 0 0 1.5px #E62B1E, 0 20px 60px rgba(230,43,30,0.55), 0 8px 24px rgba(0,0,0,0.6)";
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (window.innerWidth >= 1024) {
-                    e.currentTarget.style.transform = "translateY(0) scale(1)";
-                    e.currentTarget.style.boxShadow =
-                      "0 10px 30px rgba(0,0,0,0.4)";
-                  }
-                }}
-              >
+            {sections[activeSection].speakers.map((speaker) => {
+              const cardKey = `${activeSection}-${speaker.id}`;
+              const isMobileActive = activeMobileCard === cardKey;
+              return (
+                <div
+                  key={speaker.id}
+                  className={`speaker-card relative group w-full aspect-[3/4] rounded-xl lg:rounded-2xl overflow-hidden shadow-xl bg-gradient-to-b from-[#B21919] via-[#B21919] to-[#4C0B0B] cursor-pointer ${isMobileActive ? "mobile-active" : ""}`}
+                  style={{
+                    transform: "translateY(0) scale(1)",
+                    transition:
+                      "transform 0.4s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.4s ease",
+                  }}
+                  onClick={() => handleMobileCardToggle(cardKey)}
+                  onMouseEnter={(e) => {
+                    if (window.innerWidth >= 1024) {
+                      e.currentTarget.style.transform =
+                        "translateY(-10px) scale(1.02)";
+                      e.currentTarget.style.boxShadow =
+                        "0 0 0 1.5px #E62B1E, 0 20px 60px rgba(230,43,30,0.55), 0 8px 24px rgba(0,0,0,0.6)";
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (window.innerWidth >= 1024) {
+                      e.currentTarget.style.transform = "translateY(0) scale(1)";
+                      e.currentTarget.style.boxShadow =
+                        "0 10px 30px rgba(0,0,0,0.4)";
+                    }
+                  }}
+                >
                 {/* ── Watermark X ── */}
-                <div className="absolute top-2 left-2 sm:top-4 sm:left-4 z-20 transition-all duration-400 lg:group-hover:opacity-0 lg:group-hover:scale-75">
+                <div className="card-watermark absolute top-2 left-2 sm:top-4 sm:left-4 z-20 transition-all duration-400 lg:group-hover:opacity-0 lg:group-hover:scale-75">
                   <span className="text-white/80 font-serif text-xl sm:text-3xl font-black italic select-none">
                     X
                   </span>
@@ -334,7 +385,7 @@ const Speakers = () => {
                 <img
                   src={speaker.image || "/placeholder.svg"}
                   alt={speaker.name}
-                  className="absolute inset-0 w-full h-full object-cover object-top mix-blend-normal z-10"
+                  className="card-image absolute inset-0 w-full h-full object-cover object-top mix-blend-normal z-10"
                   style={{
                     filter: "grayscale(100%) brightness(0.85)",
                     opacity: 0.92,
@@ -384,6 +435,15 @@ const Speakers = () => {
                   onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
                   onMouseLeave={(e) => (e.currentTarget.style.opacity = "0")}
                 />
+                <div
+                  className="card-mobile-vignette absolute inset-0 z-15 pointer-events-none lg:hidden"
+                  style={{
+                    background:
+                      "radial-gradient(ellipse at 50% 100%, rgba(230,43,30,0.22) 0%, transparent 70%)",
+                    opacity: 0,
+                    transition: "opacity 0.5s ease",
+                  }}
+                />
 
                 {/* ── Bottom text overlay ── */}
                 <div
@@ -421,15 +481,19 @@ const Speakers = () => {
                   />
 
                   {/* Mobile red line equivalent (static for small screens) */}
-                  <div className="h-[2px] w-1/3 bg-[#E62B1E] mt-1 sm:mt-2 mb-1 rounded-full lg:hidden opacity-80" />
+                  <div
+                    className="card-mobile-underline h-[2px] w-1/3 bg-[#E62B1E] mt-1 sm:mt-2 mb-1 rounded-full lg:hidden opacity-80"
+                    style={{ transition: "width 0.35s ease, opacity 0.35s ease" }}
+                  />
 
                   {/* TEDx label */}
-                  <p className="text-gray-300 text-[9px] sm:text-xs lg:text-sm font-medium tracking-widest transition-colors duration-300 lg:group-hover:text-[#E62B1E] truncate">
+                  <p className="card-label text-gray-300 text-[9px] sm:text-xs lg:text-sm font-medium tracking-widest transition-colors duration-300 lg:group-hover:text-[#E62B1E] truncate">
                     TEDxIITRoorkee
                   </p>
                 </div>
-              </div>
-            ))}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
