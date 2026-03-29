@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaRegCalendarAlt, FaRegClock, FaMapMarkerAlt } from "react-icons/fa";
-import tickets from "/tickets.webp";
+// import tickets from "/tickets.webp";
+import tickets from "/ticket2026.png";
 import Frame from "/Speakers2024/Frame.webp";
 
 // ─── CONFIGURE YOUR URLS & COUPON HERE ───────────────────────────────────────
