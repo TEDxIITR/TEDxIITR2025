@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaRegCalendarAlt, FaRegClock, FaMapMarkerAlt } from "react-icons/fa";
 // import tickets from "/tickets.webp";
-import tickets from "/ticket2026.png";
+// import tickets from "/ticket2026.png";
 import Frame from "/Speakers2024/Frame.webp";
 
 // ─── CONFIGURE YOUR URLS & COUPON HERE ───────────────────────────────────────
@@ -556,7 +556,7 @@ export default function TedxBooking() {
         <div className="w-full flex flex-col items-center">
           <TicketCard
             leftTitle="Price"
-            leftImage={tickets}
+            leftImage="/ticket2026.png"
             locationText="IIT Roorkee, 247667"
           />
         </div>
