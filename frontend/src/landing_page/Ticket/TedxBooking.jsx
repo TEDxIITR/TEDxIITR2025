@@ -480,7 +480,7 @@ const TicketCard = ({ leftTitle, leftImage, locationText }) => {
               </svg>
               Rs. {PRICE_COUPON}/- with Coupon Code
             </span>
-            <p className="mt-2 text-[0.65rem] text-red-700 font-medium text-center leading-relaxed">
+            <p className="mt-2 text-[0.65rem] text-gray-500  uppercase  font-medium text-center leading-relaxed">
               FOR COUPON CODES, CONTACT:
               <br />
               +91 70270 55015 <br /> +91 94267 33245
