@@ -1,114 +1,174 @@
 import React from "react";
-import AWS from "/Sponsers/AWS.webp";
-import Cashify from "/Sponsers/CASHIFY.webp";
-import CashKaro from "/Sponsers/CASHKARO.webp";
-import Infosys from "/Sponsers/INFOSYS.webp";
-import NPCI from "/Sponsers/NCPI.webp";
-import OYO from "/Sponsers/OYO.webp";
-import Samsung from "/Sponsers/SAMSUNG.webp";
-import Tides from "/Sponsers/TIDES.webp";
-import TOI from "/Sponsers/TOI.webp";
+
+// Partner data array for easy management.
+// Just drop your actual WebP files into the public/Sponsers directory.
+const partners = [
+  {
+    name: "Algorithm Research",
+    type: "Silver Sponsor",
+    link: "https://algorithmresearch.com/",
+    logo: "/Sponsers/Algorithm.png",
+  },
+  {
+    name: "Arome World",
+    type: "Scent Partner",
+    link: "https://aromeworld.in/",
+    logo: "/Sponsers/Arome.png",
+  },
+  {
+    name: "Ayouthveda",
+    type: "Lifestyle Partner",
+    link: "https://www.ayouthveda.com/",
+    logo: "/Sponsers/Ayouthveda.webp",
+  },
+  {
+    name: "Peter England",
+    type: "Clothing Partner",
+    link: "https://www.google.com/maps/search/Peter+England+Roorkee",
+    logo: "/Sponsers/PeterEngland.png",
+  },
+  {
+    name: "Tim Paris",
+    type: "Fashion Partner",
+    link: "https://www.google.com/maps/search/Tim+Paris+Roorkee",
+    logo: "/Sponsers/TimParis.png",
+  },
+  {
+    name: "Doon Merch",
+    type: "Merchandise Partner",
+    link: "https://www.google.com/maps/search/Doon+Merch+Dehradun", // Usually DDN based, update to Roorkee if needed
+    logo: "/Sponsers/Doon.png",
+  },
+  {
+    name: "Salon Name Pending", // TODO: Update this once you get the Insta name
+    type: "Beauty Partner",
+    link: "https://www.google.com/maps/search/Salon+Roorkee",
+    logo: "/Sponsers/Salon.png",
+  },
+];
+
+const styles = `
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+  .tl-root {
+    --ted-red: #E62B1E;
+    --ted-red-glow: rgba(230, 43, 30, 0.35);
+    --ted-red-soft: rgba(230, 43, 30, 0.15);
+    --spine-color: rgba(255,255,255,0.12);
+    --bg: #0a0a0a;
+    --card-bg: rgba(255,255,255,0.035);
+    --card-border: rgba(255,255,255,0.08);
+    --card-border-red: rgba(230,43,30,0.45);
+    --text-dim: rgba(255,255,255,0.38);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 1.25rem 6rem;
+    box-sizing: border-box;
+    position: relative;
+    font-family: 'Rajdhani', sans-serif;
+  }
+
+  .tl-header {
+    text-align: center;
+    margin-bottom: 4.5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .tl-header-line {
+    width: 40px;
+    height: 2px;
+    background: var(--ted-red);
+    margin: 1.5rem auto 0;
+    border-radius: 2px;
+  }`;
 
 const Sponsers = () => {
   return (
     <main>
-      <section className="lg:min-h-full md:w-full pb-10 px-5 py-10 mb-16">
-        {/* <h1
-          className="text-[#d9d9d9] text-6xl  md:text-7xl lg:text-8xl text-center mb-16  font-passion font-extrabold leading-normal"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(110, 110, 110, 0.46) 46.23%, rgba(212, 212, 212, 0.00) 90.52%)",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            fontWeight: "10rem",
-          }}
-        >
-          Sponsors
-        </h1> */}
-        {/* <div className="flex w-[100%] md:w-full gap-2.5 flex-col md:gap-10 justify-self-center">
-          <div className="flex gap-4 justify-center md:gap-15">
-            <div>
-              <img src={NPCI} alt="" className="rounded-xl" />
-            </div>
-            <div>
-              <img src={Tides} alt="" className="rounded-xl" />
-            </div>
-            <div>
-              <img src={CashKaro} alt="" className="rounded-xl" />
-            </div>
-            <div className="rounded-xl">
-              <img src={TOI} alt="" className="rounded-xl" />
-            </div>
-          </div>
-          <div className="flex flex-row gap-4  w-[80%] mx-auto justify-self-center md:justify-center md:gap-18 md:w-full">
-            <div className="bg-white rounded-xl">
-              <img src={Infosys} alt="" className="rounded-xl" />
-            </div>
-            <div>
-              <img src={NPCI} alt="" className="rounded-xl" />
-            </div>
-            <div className="bg-white pt-3 px-2 rounded-xl">
-              <img src={Samsung} alt="" className="rounded-xl" />
-            </div>
-          </div>
-          <div className="flex flex-row  gap-4  w-[60%] mx-auto justify-self-center md:gap-12 justify-center md:w-full">
-            <div>
-              <img src={OYO} alt="" className="rounded-xl" />
-            </div>
-            <div className="bg-white rounded-xl">
-              <img src={Cashify} alt="" className="rounded-xl" />
-            </div>
-          </div>
-          <div className="flex flex-row w-[40%] mx-auto justify-self-center md:justify-evenly md:w-full ">
-            <div className="bg-white px-3 py-2 rounded-xl">
-              <img className="w-[4rem] " src={AWS} alt="" />
-            </div>
-          </div>
-        </div> */}
+      {/* Inline styles for the infinite marquee animation to ensure it works on Vercel without Tailwind config changes */}
+      <style>
+        {`
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-marquee {
+            /* Adjust the 25s value to make the scroll faster or slower */
+            animation: marquee 25s linear infinite;
+          }
+          .animate-marquee:hover {
+            animation-play-state: paused;
+          }
+        `}
+      </style>
 
-        <div className="flex flex-col gap-10 lg:gap-36 justify-evenly">
+      <section className="lg:min-h-full md:w-full pb-10 px-5 py-10 mb-16 overflow-hidden tl-root">
+        <style>{styles}</style>
+        <div className="flex flex-col gap-10 lg:gap-20 justify-evenly">
+          {/* --- Title Sponsor Section --- */}
+          {/* <div className=""> */}
           <div className="flex flex-col">
-            <h1
-              className="text-[#d9d9d9] text-4xl  md:text-7xl lg:text-8xl text-center mb-4  font-passion font-extrabold leading-normal"
-              style={{
-                background:
-                  "linear-gradient(180deg, rgba(110, 110, 110, 0.46) 46.23%, rgba(212, 212, 212, 0.00) 90.52%)",
-                WebkitBackgroundClip: "text",
-                backgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                fontWeight: "4rem",
-              }}
-            >
-              Title Sponsor
-            </h1>
-            <a href="https://www.sudlife.in/" target="_blank">
+            <div className="tl-header">
+              <h1 className="text-center text-4xl md:text-7xl lg:text-8xl font-bold text-[#ffffff]">
+                Title Sponsor
+              </h1>
+              {/* <div className="tl-header-line" /> */}
+            </div>
+            <a href="https://sarrthiias.com/" target="_blank" rel="noreferrer">
               <img
-                src="/Logos/TitleSponser.webp"
-                className="w-[90%] lg:w-[60%] flex self-center mx-auto hover:scale-105 rounded-md border-transparent hover:border-red-600 transition-all duration-150"
-                alt=""
+                src="/Sponsers/Saarthi.png"
+                className="w-[8%] lg:w-[10%] flex self-center mx-auto hover:scale-105 rounded-md border-transparent hover:border-red-600 transition-all duration-150"
+                alt="Sarrthi IAS"
               />
             </a>
           </div>
-          <div className="flex flex-col items-center">
-            <h1
-              className="text-[#d9d9d9] text-2xl  md:text-6xl lg:text-7xl text-center mb-4  font-passion font-extrabold leading-normal"
-              style={{
-                background:
-                  "linear-gradient(180deg, rgba(110, 110, 110, 0.46) 46.23%, rgba(212, 212, 212, 0.00) 90.52%)",
-                WebkitBackgroundClip: "text",
-                backgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                fontWeight: "4rem",
-              }}
-            >
-              Media Partner
+
+          {/* --- Other Partners Section (Infinite Scroll) --- */}
+          <div className="flex flex-col items-center overflow-hidden w-full">
+            <h1 className="text-[#d9d9d9] text-4xl md:text-7xl lg:text-8xl text-center mb-10 font-passion font-extrabold leading-normal">
+              Other Partners
             </h1>
-            <img
-              src="/Logos/MediaPartner.webp"
-              className="w-[60%] lg:w-[50%] rounded-md"
-              alt=""
-            />
+
+            {/* Scroll Container */}
+            <div className="relative flex w-full overflow-hidden group">
+              <div className="flex w-max animate-marquee gap-8 px-4">
+                {/* We map through the partners array TWICE. 
+                  This is the secret to making an infinite scroll seamless without javascript jumps.
+                */}
+                {[...partners, ...partners].map((partner, index) => (
+                  <a
+                    key={index}
+                    href={partner.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    // Styling matching your reference image: light grey box, red hover glow
+                    className="flex flex-col items-center justify-center min-w-[220px] h-[110px] bg-[#e5e5e5] rounded-md transition-all duration-300 border border-transparent hover:border-red-600 shadow-[0_0_10px_rgba(255,0,0,0.1)] hover:shadow-[0_0_15px_rgba(255,0,0,0.5)] hover:scale-105"
+                  >
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      className="max-h-16 max-w-[80%] object-contain"
+                      // Fallback: If you haven't added the logo file yet, it displays the text instead
+                      onError={(e) => {
+                        e.target.style.display = "none";
+                        e.target.nextSibling.style.display = "flex";
+                      }}
+                    />
+                    <div className="hidden flex-col items-center">
+                      <span className="text-sm font-bold text-gray-800 text-center px-2">
+                        {partner.name}
+                      </span>
+                      <span className="text-xs text-red-600 font-semibold">
+                        {partner.type}
+                      </span>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
