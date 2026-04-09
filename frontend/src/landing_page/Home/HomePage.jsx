@@ -53,9 +53,9 @@ const HomePage = () => {
       <section id="speakers-section">
         <SpearkersPage />
       </section>
-      {/* <section id="sponsers-section">
+      <section id="sponsers-section">
         <SponsersPage />
-      </section> */}
+      </section>
       <section id="tickets-merch-section">
         <TicketsAndMerch2026Home />
       </section>
