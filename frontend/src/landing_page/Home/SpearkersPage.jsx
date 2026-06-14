@@ -1,5 +1,4 @@
 import React from "react";
-import Speakers from "./Speakers";
 import Speakers2026 from "./Speakers2026";
 const SpearkersPage = () => {
   return (
